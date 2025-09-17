@@ -1,0 +1,231 @@
+/* Enhanced Navbar using your color scheme only */
+#mainNavbar {
+    background-color: rgba(248, 249, 250, 0.95);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+#mainNavbar.scrolled {
+    background-color: rgba(248, 249, 250, 0.98);
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Brand styling with your colors */
+.navbar-brand {
+    color: #343a40 !important;
+    font-size: 1.4rem;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.brand-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background-color: #17a2b8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+}
+
+.brand-icon {
+    color: white;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .brand-icon-wrapper {
+    transform: translateY(-2px);
+    background-color: #138496;
+    box-shadow: 0 6px 16px rgba(23, 162, 184, 0.4);
+}
+
+.navbar-brand:hover .brand-icon {
+    transform: scale(1.1);
+}
+
+.brand-text {
+    color: #343a40;
+}
+
+/* Custom toggler using your colors */
+.custom-toggler {
+    border: none;
+    padding: 0.5rem;
+    background: transparent;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.custom-toggler:focus {
+    box-shadow: none;
+}
+
+.custom-toggler:hover {
+    background-color: rgba(23, 162, 184, 0.1);
+}
+
+.toggler-line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #17a2b8;
+    margin: 4px auto;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+.custom-toggler:not(.collapsed) .toggler-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.custom-toggler:not(.collapsed) .toggler-line:nth-child(2) {
+    opacity: 0;
+}
+
+.custom-toggler:not(.collapsed) .toggler-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Enhanced nav links with your colors */
+.nav-link-enhanced {
+    position: relative;
+    color: #6c757d !important;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem !important;
+}
+
+.nav-link-enhanced::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #17a2b8;
+    transition: width 0.3s ease;
+}
+
+.nav-link-enhanced:hover {
+    color: #17a2b8 !important;
+    background-color: rgba(23, 162, 184, 0.05);
+}
+
+.nav-link-enhanced:hover::after {
+    width: 80%;
+}
+
+.nav-link-enhanced.active {
+    color: #17a2b8 !important;
+}
+
+.nav-link-enhanced.active::after {
+    width: 80%;
+}
+
+/* Contact button with your colors */
+.contact-btn {
+    background-color: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+.contact-btn:hover {
+    background-color: #138496 !important;
+    border-color: #138496 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+}
+
+.contact-btn:hover::before {
+    left: 100%;
+}
+
+/* Mobile enhancements */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: rgba(248, 249, 250, 0.98);
+        backdrop-filter: blur(15px);
+        border-radius: 12px;
+        margin-top: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(23, 162, 184, 0.1);
+    }
+
+    .nav-link-enhanced {
+        margin: 0.25rem 0;
+        text-align: center;
+        padding: 0.75rem !important;
+    }
+
+    .contact-btn {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 575.98px) {
+    .brand-text {
+        display: none;
+    }
+
+    .brand-icon-wrapper {
+        width: 35px;
+        height: 35px;
+    }
+
+    .brand-icon {
+        font-size: 1rem;
+    }
+
+    #mainNavbar {
+        padding: 0.75rem 0;
+    }
+
+    #mainNavbar.scrolled {
+        padding: 0.5rem 0;
+    }
+}
+
+/* Smooth transitions */
+.nav-link-enhanced i {
+    transition: transform 0.2s ease;
+}
+
+.nav-link-enhanced:hover i {
+    transform: scale(1.1);
+}

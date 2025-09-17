@@ -1,0 +1,82 @@
+/* About Us Page Specific Styles */
+
+.about-hero {
+    position: relative;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.about-hero .lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.container-section {
+    padding: 60px 0;
+}
+
+.container-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.container-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.team-section {
+    padding: 60px 0;
+}
+
+.team-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.team-section .rounded-circle {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.team-section h4 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.team-section .text-muted {
+    font-size: 1rem;
+    font-style: italic;
+}

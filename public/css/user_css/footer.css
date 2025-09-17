@@ -1,0 +1,160 @@
+/* ----------------------------------------- */
+/* --- SCOPED FOOTER STYLESHEET --- */
+/* ----------------------------------------- */
+
+/* By using '.site-footer' at the start of every rule,
+       these styles CANNOT be overridden by general styles
+       from other files like hero.blade.php */
+
+.site-footer {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+    border-top: 1px solid #e9ecef;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Left Card */
+.site-footer .footer-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e9ecef;
+}
+
+.site-footer .footer-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.site-footer .footer-brand-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background-color: #17a2b8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.site-footer .footer-brand-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #343a40;
+    margin-left: 0.75rem;
+    margin-bottom: 0;
+}
+
+.site-footer .footer-card-description {
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+.site-footer .footer-card-divider {
+    margin: 1.5rem 0;
+    border-color: #e9ecef;
+}
+
+/* Newsletter in Card */
+.site-footer .footer-newsletter-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.site-footer .newsletter-form .form-control {
+    border-radius: 8px 0 0 8px !important;
+    border-color: #dee2e6;
+    font-size: 0.9rem;
+}
+
+.site-footer .newsletter-form .form-control:focus {
+    border-color: #17a2b8;
+    box-shadow: none;
+}
+
+.site-footer .newsletter-form .btn-submit {
+    background-color: #17a2b8;
+    color: white;
+    border-color: #17a2b8;
+    border-radius: 0 8px 8px 0 !important;
+    transition: background-color 0.3s ease;
+}
+
+.site-footer .newsletter-form .btn-submit:hover {
+    background-color: #138496;
+}
+
+/* Right Side Links */
+.site-footer .footer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 1rem;
+}
+
+.site-footer .footer-links {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.site-footer .footer-links li {
+    margin-bottom: 0.6rem;
+}
+
+.site-footer .footer-links a {
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.site-footer .footer-links a:hover {
+    color: #17a2b8;
+    padding-left: 4px;
+}
+
+/* Bottom Bar */
+.site-footer .footer-bottom {
+    border-top: 1px solid #dee2e6;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-footer .footer-copyright {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.site-footer .footer-socials {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.site-footer .footer-socials a {
+    width: 32px;
+    height: 32px;
+    background-color: #e9ecef;
+    border-radius: 50%;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.site-footer .footer-socials a:hover {
+    background-color: #17a2b8;
+    color: white;
+    transform: translateY(-2px);
+}

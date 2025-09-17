@@ -1,0 +1,21 @@
+/* Custom CSS for the scrollbar and hover effect */
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Opera */
+}
+
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    /* For Internet Explorer and Edge */
+    scrollbar-width: none;
+    /* For Firefox */
+}
+
+/* Optional: Add a subtle hover effect for the Instagram posts */
+.instagram-post-hover {
+    transition: transform 0.2s ease-in-out;
+}
+
+.instagram-post-hover:hover {
+    transform: translateY(-5px);
+}
