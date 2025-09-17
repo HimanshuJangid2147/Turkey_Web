@@ -134,7 +134,7 @@ body {
 
 /* Enhanced Carousel Indicators */
 .carousel-indicators {
-    bottom: 4rem;
+    bottom: 0.5rem;
     z-index: 4;
 }
 
@@ -397,6 +397,8 @@ body {
 .feature-icon {
     width: 80px;
     height: 80px;
+    min-width: 80px;
+    min-height: 80px;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     border-radius: 50%;
     display: flex;
@@ -407,6 +409,12 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+}
+
+.feature-icon i {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
 }
 
 .feature-icon::before {
@@ -666,7 +674,7 @@ body {
     }
 
     .carousel-indicators {
-        bottom: 2rem;
+        bottom: 0.2rem;
     }
 
     .why-choose-section {

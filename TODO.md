@@ -1,12 +1,5 @@
-- [x] Update contact.css to use color variables from sitecolor.css
-  - [x] Replace #f8f9fa with --gray-100 in .contact-section
-  - [x] Replace #17a2b8 and #138496 with --primary-color and --primary-dark in .info-panel gradient
-  - [x] Replace #17a2b8 with --primary-color in .input-group-text color
-   - [x] Replace #e9ecef with --gray-200 in borders and backgrounds
-   - [x] Replace #17a2b8 with --primary-color in form-control focus
-   - [x] Replace rgba(23, 162, 184, 0.15) with --rgba-primary-03 in box-shadow
-   - [x] Replace #343a40 with --gray-800 in .submit-btn
-   - [x] Replace #17a2b8 with --primary-color in .submit-btn hover
-   - [x] Replace rgba(23, 162, 184, 0.3) with --rgba-primary-08 in box-shadow
-   - [x] Replace rgba(23, 162, 184, 0.1) with --rgba-primary-03 in .accordion-button
-   - [x] Replace #138496 with --primary-dark in .accordion-button color
+- [x] Fix "why choose us" section icons to be perfectly round
+  - [x] Ensure .feature-icon has equal width and height
+  - [x] Verify border-radius: 50% creates perfect circle
+  - [x] Check icon centering within the circle
+  - [x] Test visual appearance
