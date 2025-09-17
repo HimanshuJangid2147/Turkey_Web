@@ -2,7 +2,7 @@
 @section('content')
     <?php
     $heroimageUrl = asset('images/Untitled.png');
-    $videoUrl = asset('videos/turkey-travel.mp4');
+    $videoUrl = asset('videos/turkey-travel1.mp4');
     $istanbulImage = asset('images/istanbul.webp');
     $cappadociaImage = asset('images/Cappadocia.jpg');
     $bodrumImage = asset('images/Bodrum.webp');

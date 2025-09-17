@@ -96,6 +96,7 @@
 @media (max-width: 768px) {
   .breadcrumb-wrapper {
     padding: 0.75rem 0;
+    margin-top: 5rem; /* Reduced margin-top for mobile */
     margin-bottom: 1.5rem;
   }
 
@@ -120,7 +121,8 @@
 
 @media (max-width: 576px) {
   .breadcrumb-wrapper {
-    padding: 0.5rem 0;
+    margin-top: 4.2rem; /* Further increased margin-top to push breadcrumb more down */
+    margin-bottom: 0rem;
   }
 
   .breadcrumb-custom {
@@ -128,7 +130,7 @@
   }
 
   .breadcrumb-item {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.15rem; /* Slightly reduced margin-bottom for better spacing */
   }
 
   .breadcrumb-link,

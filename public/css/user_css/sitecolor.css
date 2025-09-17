@@ -8,11 +8,11 @@
    * Core colors evoking travel, nature, and water.
    */
   --primary-color: #148f76;      /* A deep, adventurous teal/green */
-  --primary-dark: #0f6c58;       /* A darker shade for accents and states */
-  --primary-light: #e0f2ef;      /* A very light mint for soft backgrounds */
+  --primary-dark: #0f6c588b;       /* A darker shade for accents and states */
+  --primary-light: #e0f2ef8b;      /* A very light mint for soft backgrounds */
 
-  --secondary-color: #d8a05f;    /* A warm, earthy sand/ochre */
-  --secondary-dark: #b8854b;     /* A deeper shade for richness */
+  --secondary-color: #d8a05f8b;    /* A warm, earthy sand/ochre */
+  --secondary-dark: #b8854b8b;     /* A deeper shade for richness */
   --secondary-light: #fcf6e8;    /* A light cream tint for a natural feel */
 
   --rgba-white-48: rgba(255, 255, 255, 0.48);
@@ -36,8 +36,8 @@
    * Accent Colors
    * Used to highlight calls-to-action and important information, like a sunset.
    */
-  --accent-color: #ff8c42;       /* A vibrant, energetic orange */
-  --accent-dark: #e07b3b;        /* A darker tone for contrast */
+  --accent-color: #ff8a428b;       /* A vibrant, energetic orange */
+  --accent-dark: #e07a3b8b;        /* A darker tone for contrast */
   --accent-light: #fff2e6;       /* A light peach tint for subtle highlights */
 
   --red: #d9534f;                /* For warnings and cancellations */
