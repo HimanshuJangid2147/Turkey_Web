@@ -49,14 +49,10 @@
     opacity: 0.95;
 }
 
-/* Main Contact Section */
-.contact-section {
-    background-color: #f8f9fa;
-}
-
 /* Form Card Styling */
 .contact-form-card {
-    background: white;
+    background: var(--rgba-white-48);
+    backdrop-filter: blur(10px);
     border-radius: 24px;
     padding: 3rem;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
@@ -64,7 +60,10 @@
 
 /* Info Panel Styling */
 .info-panel {
-    background: linear-gradient(135deg, #17a2b8, #138496);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    opacity: 0.9;
     color: white;
     border-radius: 24px;
     padding: 3rem;
@@ -103,16 +102,16 @@
 
 /* Form Input Groups */
 .input-group-text {
-    background-color: #e9ecef;
-    border-color: #e9ecef;
+    background-color: var(--gray-200);
+    border-color: var(--gray-200);
     border-right: none;
     border-radius: 16px 0 0 16px !important;
-    color: #17a2b8;
+    color: var(--primary-color);
 }
 
 .form-control {
     border-radius: 16px !important;
-    border: 2px solid #e9ecef;
+    border: 2px solid var(--gray-200);
     padding: 1rem 1.25rem;
     transition: all 0.3s ease;
 }
@@ -123,14 +122,14 @@
 }
 
 .form-control:focus {
-    border-color: #17a2b8;
-    box-shadow: 0 0 0 0.25rem rgba(23, 162, 184, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem var(--rgba-primary-03);
     background-color: white;
 }
 
 /* Submit Button */
 .submit-btn {
-    background: #343a40;
+    background: var(--gray-800);
     border: none;
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
@@ -140,9 +139,9 @@
 }
 
 .submit-btn:hover {
-    background: #17a2b8;
+    background: var(--primary-color);
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(23, 162, 184, 0.3);
+    box-shadow: 0 10px 25px var(--rgba-primary-08);
 }
 
 /* FAQ & Map Sections */
@@ -151,8 +150,8 @@
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: rgba(23, 162, 184, 0.1);
-    color: #138496;
+    background-color: var(--rgba-primary-03);
+    color: var(--primary-dark);
 }
 
 .map-container {
