@@ -109,7 +109,7 @@
     </section>
 
     {{-- Enhanced Deals & Promotions Section --}}
-    <section class="py-5">
+    <section class="pb-5">
         <div class="container my-5">
             <div class="text-center section-header fade-in-up">
                 <p class="section-badge">Limited Time Offers</p>
@@ -176,16 +176,23 @@
     </section>
 
     {{-- Enhanced Why Choose Us Section --}}
-    <section class="container my-5 py-5">
-        <div class="why-choose-section">
-            <div class="text-center section-header fade-in-up">
-                <p class="section-badge">Why Turkey Travel</p>
-                <h2 class="section-title">Why Choose Us</h2>
-                <p class="section-subtitle">
-                    Experience the difference with our expert local knowledge, personalized service, and commitment to creating unforgettable memories that last a lifetime.
-                </p>
+    <section class="container mb-5 pb-5">
+        <div class="text-center section-header fade-in-up">
+            <p class="section-badge">Why Choose Us</p>
+            <h2 class="section-title">Why Choose Us</h2>
+            <p class="section-subtitle">
+                Our commitment to excellence and personalized service sets us apart from the competition. Why choose us?
+            </p>
+            <div class="section-divider">
+                <span class="divider-dot"></span>
+                <span class="divider-dot"></span>
+                <i class="bi bi-star-fill divider-icon fs-4"></i>
+                <span class="divider-dot"></span>
+                <span class="divider-dot"></span>
             </div>
+        </div>
 
+        <div class="why-choose-section">
             <div class="row g-5">
                 @php
                     $features = [
@@ -230,7 +237,7 @@
     </section>
 
     {{-- Enhanced Testimonials Section --}}
-    <section class="py-5">
+    <section class="pb-5">
         <div class="container my-5">
             <div class="text-center section-header fade-in-up">
                 <p class="section-badge">Client Stories</p>

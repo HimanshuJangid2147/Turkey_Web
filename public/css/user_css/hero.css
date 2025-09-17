@@ -512,7 +512,7 @@ body {
 /* Enhanced Instagram Section */
 .instagram-section {
     /* background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); */
-    padding: 5rem 0;
+    padding-bottom: 5rem;
 }
 
 .instagram-post {
@@ -593,22 +593,23 @@ body {
 }
 
 .newsletter-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(1.5rem, 2.5vw, 4rem);
     font-weight: 800;
     text-shadow: 3px 3px 6px var(--rgba-black-05);
     margin-bottom: 1.5rem;
 }
 
 .newsletter-subtitle {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 400;
     text-shadow: 2px 2px 4px var(--rgba-black-05);
     margin-bottom: 3rem;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .newsletter-form {
     background: var(--rgba-white-15);
+    border: 1px solid var(--rgba-black-05);
     border-radius: 60px;
     padding: 1rem;
     backdrop-filter: blur(10px);
