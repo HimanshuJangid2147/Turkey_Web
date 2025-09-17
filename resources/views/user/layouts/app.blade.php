@@ -21,12 +21,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     {{-- Custom CSS --}}
+    <link rel="stylesheet" href="{{ asset('css/user_css/sitecolor.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/hero.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/contact.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/aboutus.css') }}">
+
+    {{-- Custom CSS for gradient background --}}
+    {{-- <link rel="stylesheet" href="{{ asset('css/user_css/graident.css') }}"> --}}
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100">

@@ -1,8 +1,9 @@
 <footer class="site-footer">
+    @include('user.partials.newsletter')
     <div class="container">
         <div class="row gy-4 gx-lg-5 align-items-start">
 
-            <div class="col-lg-4 col-md-12">
+            <div class="col-lg-3 col-md-12">
                 <div class="footer-card">
                     <div class="footer-brand">
                         <div class="footer-brand-icon-wrapper">
@@ -11,23 +12,30 @@
                         <h4 class="footer-brand-text">Turkey Travel</h4>
                     </div>
                     <p class="footer-card-description">
-                        Discover the magic of Turkey with our expertly curated travel experiences. Creating unforgettable memories since 1989.
+                        Discover the magic of Turkey with our expertly curated travel experiences. Creating
+                        unforgettable memories since 1989.
                     </p>
-                    <hr class="footer-card-divider">
-                    <div class="footer-newsletter">
-                        <h6 class="footer-heading">Join Our Newsletter</h6>
-                        <p class="footer-newsletter-text">Get travel deals, new trip inspiration, and more.</p>
-                        <form class="newsletter-form">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Your email address">
-                                <button class="btn btn-submit" type="button"><i class="bi bi-send-fill"></i></button>
-                            </div>
-                        </form>
+                    <div class="footer-region-select m-3 ">
+                        {{-- Dropdown for region select --}}
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="bi bi-globe"></i> Select Your Region
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Europe</a></li>
+                                <li><a class="dropdown-item" href="#">Asia</a></li>
+                                <li><a class="dropdown-item" href="#">North America</a></li>
+                                <li><a class="dropdown-item" href="#">South America</a></li>
+                                <li><a class="dropdown-item" href="#">Africa</a></li>
+                                <li><a class="dropdown-item" href="#">Oceania</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-8 col-md-12">
+            <div class="col-lg-9 col-md-12">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-6">
                         <h5 class="footer-heading">Booking</h5>
@@ -42,7 +50,7 @@
                     <div class="col-lg-3 col-md-6 col-6">
                         <h5 class="footer-heading">Company</h5>
                         <ul class="footer-links">
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="/about">About Us</a></li>
                             <li><a href="#">Careers</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">B Corp</a></li>

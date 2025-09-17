@@ -140,7 +140,7 @@
                         <a href="/contact" class="btn btn-light btn-lg px-5 py-3 rounded-pill fw-semibold">
                             <i class="fas fa-paper-plane me-2"></i>Get In Touch
                         </a>
-                        <a href="/packages" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-semibold">
+                        <a href="/packages" class="btn btn-outline-dark btn-lg px-5 py-3 rounded-pill fw-semibold">
                             <i class="fas fa-route me-2"></i>View Packages
                         </a>
                     </div>
@@ -174,13 +174,8 @@
         .decoration-line {
             width: 80px;
             height: 4px;
-            background: linear-gradient(45deg, #17a2b8, #1b272c);
             margin: 0 auto;
             border-radius: 2px;
-        }
-
-        .stats-section {
-            background: linear-gradient(135deg, #17a2b8, #1b272c);
         }
 
         .stat-item {
@@ -248,9 +243,7 @@
             width: 100px;
         }
 
-        .bg-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
+
 
         .animate-fade-in {
             animation: fadeInUp 1s ease;

@@ -1,26 +1,19 @@
-/* ----------------------------------------- */
-/* --- SCOPED FOOTER STYLESHEET --- */
-/* ----------------------------------------- */
-
-/* By using '.site-footer' at the start of every rule,
-       these styles CANNOT be overridden by general styles
-       from other files like hero.blade.php */
-
 .site-footer {
-    background-color: #f8f9fa;
+    background-color: var(--rgba-white-48);
+    backdrop-filter: blur(10px);
     padding: 4rem 0;
-    border-top: 1px solid #e9ecef;
+    border-top: 1px solid var(--gray-200);
     font-family: "Poppins", sans-serif;
 }
 
 /* Left Card */
-.site-footer .footer-card {
+/* .site-footer .footer-card {
     background-color: #ffffff;
     border-radius: 16px;
     padding: 2rem;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
     border: 1px solid #e9ecef;
-}
+} */
 
 .site-footer .footer-brand {
     display: flex;
@@ -32,35 +25,36 @@
     width: 40px;
     height: 40px;
     flex-shrink: 0;
-    background-color: #17a2b8;
+    background-color: var(--primary-color);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--white);
 }
 
 .site-footer .footer-brand-text {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #343a40;
+    color: var(--gray-600);
     margin-left: 0.75rem;
     margin-bottom: 0;
 }
 
 .site-footer .footer-card-description {
     font-size: 0.9rem;
-    color: #6c757d;
+    color: var(--gray-400);
     line-height: 1.6;
 }
 
 .site-footer .footer-card-divider {
     margin: 1.5rem 0;
-    border-color: #e9ecef;
+    border-color: var(--gray-200);
 }
 
 /* Newsletter in Card */
-.site-footer .footer-newsletter-text {
+
+/* .site-footer .footer-newsletter-text {
     font-size: 0.85rem;
     color: #6c757d;
     margin-bottom: 1rem;
@@ -87,13 +81,13 @@
 
 .site-footer .newsletter-form .btn-submit:hover {
     background-color: #138496;
-}
+} */
 
 /* Right Side Links */
 .site-footer .footer-heading {
     font-size: 1rem;
     font-weight: 600;
-    color: #343a40;
+    color: var(--gray-600);
     margin-bottom: 1rem;
 }
 
@@ -108,21 +102,21 @@
 }
 
 .site-footer .footer-links a {
-    color: #6c757d;
+    color: var(--gray-400);
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.2s ease;
 }
 
 .site-footer .footer-links a:hover {
-    color: #17a2b8;
+    color: var(--primary-color);
     padding-left: 4px;
 }
 
 /* Bottom Bar */
 .site-footer .footer-bottom {
-    border-top: 1px solid #dee2e6;
-    margin-top: 3rem;
+    border-top: 1px solid var(--gray-300);
+    /* margin-top: 3rem; */
     padding-top: 2rem;
     display: flex;
     justify-content: space-between;
@@ -131,7 +125,7 @@
 
 .site-footer .footer-copyright {
     font-size: 0.85rem;
-    color: #6c757d;
+    color: var(--gray-400);
     margin-bottom: 0;
 }
 
@@ -143,9 +137,9 @@
 .site-footer .footer-socials a {
     width: 32px;
     height: 32px;
-    background-color: #e9ecef;
+    background-color: var(--gray-200);
     border-radius: 50%;
-    color: #6c757d;
+    color: var(--gray-400);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,7 +148,7 @@
 }
 
 .site-footer .footer-socials a:hover {
-    background-color: #17a2b8;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     transform: translateY(-2px);
 }

@@ -39,20 +39,15 @@
                 <div class="row">
                         <div class="hero-content">
                             <h1 class="hero-title">
-                                Discover Turkey's<br>
-                                <span style="color: #17a2b8;">Hidden Treasures</span>
+                                Guaranteed Departed Tours<br>
                             </h1>
                             <p class="hero-subtitle">
-                                Embark on an extraordinary journey through Turkey's rich history, stunning landscapes, and vibrant culture. From the ancient wonders of Istanbul to the fairy-tale valleys of Cappadocia, your adventure awaits.
+                                The fabulous destinations Istanbul, Gallipoli, Troy, Pergamon, Kusadasi, Ephesus, Sirince, Pamukkale, Antalya, Konya, Cappadocia are all in with Guaranteed Departure theme. It departs 4 times every month from Istanbul, is full of shouldn't be missed attractions, local shopping opportunities, traditional cuisine tastings, and remarkable night shows.
                             </p>
                             <div class="d-flex flex-column flex-sm-row gap-3">
                                 <button class="btn hero-btn text-white">
                                     <i class="bi bi-compass-fill me-2"></i>
-                                    Explore Adventures
-                                </button>
-                                <button class="btn btn-outline-light btn-lg rounded-pill px-4">
-                                    <i class="bi bi-play-circle-fill me-2"></i>
-                                    Watch Video
+                                    See Tours
                                 </button>
                             </div>
                         </div>
@@ -66,7 +61,7 @@
     <section class="container my-5 py-5">
         <div class="text-center section-header fade-in-up">
             <p class="section-badge">Discover Amazing Places</p>
-            <h2 class="section-title">Featured Destinations</h2>
+            <h2 class="section-title">Inbound Packages</h2>
             <p class="section-subtitle">
                 Explore Turkey's most captivating destinations, each offering unique experiences and unforgettable memories that will last a lifetime.
             </p>
@@ -114,11 +109,11 @@
     </section>
 
     {{-- Enhanced Deals & Promotions Section --}}
-    <section class="bg-light py-5">
+    <section class="py-5">
         <div class="container my-5">
             <div class="text-center section-header fade-in-up">
                 <p class="section-badge">Limited Time Offers</p>
-                <h2 class="section-title">Exclusive Deals</h2>
+                <h2 class="section-title">Outbound Packages</h2>
                 <p class="section-subtitle">
                     Don't miss these incredible offers! Book now and save on your dream Turkish vacation with our specially curated tour packages.
                 </p>
@@ -168,7 +163,7 @@
                                         <i class="bi bi-star-fill text-warning me-1"></i>
                                         <small class="text-muted">4.8 (124)</small>
                                     </div>
-                                    <button class="btn btn-outline-info btn-sm rounded-pill">
+                                    <button class="btn btn-outline-primary btn-sm rounded-pill">
                                         Book Now
                                     </button>
                                 </div>
@@ -235,7 +230,7 @@
     </section>
 
     {{-- Enhanced Testimonials Section --}}
-    <section class="bg-light py-5">
+    <section class="py-5">
         <div class="container my-5">
             <div class="text-center section-header fade-in-up">
                 <p class="section-badge">Client Stories</p>
