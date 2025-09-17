@@ -14,6 +14,10 @@ Route::get('/about', function () {
     return view('user.pages.aboutus');
 });
 
+Route::get('/privacy-policy', function () {
+    return view('user.pages.privacypolicy');
+});
+
 Route::get('/admin', function () {
     return view('admin.pages.dashboard');
 });
