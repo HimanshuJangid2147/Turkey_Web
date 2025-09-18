@@ -5,7 +5,7 @@
 @endpush
 
 @section('content')
-    <?php
+    @php
     $heroimageUrl = asset('images/Untitled.png');
     $videoUrl = asset('videos/turkey-travel.mp4');
     $istanbulImage = asset('images/istanbul.webp');
@@ -14,14 +14,14 @@
     $antalyaImage = asset('images/Antalya.jpg');
     $dealsImages = [asset('images/Konya.jpg'), asset('images/Istanbul-Sightseeing.jpg'), asset('images/7-Days_Highlights.jfif'), asset('images/2d.jpg')];
     $instagramImages = [asset('images/Cappadocia.jpg'), asset('images/Bodrum.webp'), asset('images/Antalya.jpg'), asset('images/Konya.jpg'), asset('images/istanbul.webp'), asset('images/7-Days_Highlights.jfif'), asset('images/2d.jpg'), asset('images/Istanbul-Sightseeing.jpg'), asset('images/Cappadocia.jpg')];
-    ?>
+    @endphp
 
     {{-- Enhanced Hero Section --}}
-    <section class="hero-section position-relative vh-75">
+    <section class="hero-section position-relative vh-100">
         <div id="heroCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="8000">
             <div class="carousel-inner h-100">
                 <div class="carousel-item active h-100">
-                    <img src="<?php echo $heroimageUrl; ?>" class="d-block w-100 h-100 object-fit-cover"
+                    <img src="@php echo $heroimageUrl; @endphp" class="d-block w-100 h-100 object-fit-cover"
                         alt="Guaranteed Tours in Turkey">
                 </div>
                 <div class="carousel-item h-100">
@@ -106,7 +106,7 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="#" class="btn hero-btn text-white">
+            <a href="/destinations" class="btn hero-btn text-white">
                 <i class="bi bi-map-fill me-2"></i>
                 View All Destinations
             </a>
@@ -339,12 +339,12 @@
         </div>
     </section>
 
-    {{-- Enhanced Instagram Section --}}
+    {{-- Enhanced blog Section --}}
     <section class="instagram-section">
         <div class="container">
             <div class="text-center section-header fade-in-up">
                 <p class="section-badge">Follow Our Journey</p>
-                <h2 class="section-title">Instagram Adventures</h2>
+                <h2 class="section-title">Our Blogs</h2>
                 <p class="section-subtitle">
                     Get inspired by real moments from our Turkish adventures. Follow us for daily doses of wanderlust and travel inspiration.
                 </p>
@@ -355,15 +355,6 @@
                     <div class="col-6 col-md-4 col-lg-2 fade-in-up" style="animation-delay: {{ $index * 0.1 }}s">
                         <div class="instagram-post">
                             <img src="{{ $image }}" class="img-fluid w-100" alt="Instagram Post" style="aspect-ratio: 1; object-fit: cover;">
-                            <div class="position-absolute top-0 start-0 m-3 text-white">
-                                <i class="bi bi-instagram fs-5"></i>
-                            </div>
-                            <div class="position-absolute bottom-0 end-0 m-3">
-                                <div class="d-flex gap-2 text-white">
-                                    <span><i class="bi bi-heart-fill"></i> {{ rand(50, 500) }}</span>
-                                    <span><i class="bi bi-chat-fill"></i> {{ rand(5, 50) }}</span>
-                                </div>
-                            </div>
                             <div class="instagram-overlay">
                                 <i class="bi bi-eye-fill"></i>
                             </div>

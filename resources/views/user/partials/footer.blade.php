@@ -6,9 +6,7 @@
             <div class="col-lg-3 col-md-12">
                 <div class="footer-card">
                     <div class="footer-brand">
-                        <div class="footer-brand-icon-wrapper">
-                            <i class="bi bi-airplane-fill"></i>
-                        </div>
+                            <img src="{{ asset('icons/Satguru.gif') }}" alt="Logo" class="footer-brand-icon" height="50" width="80">
                         <h4 class="footer-brand-text">Turkey Travel</h4>
                     </div>
                     <p class="footer-card-description">
@@ -40,11 +38,8 @@
                     <div class="col-lg-3 col-md-6 col-6">
                         <h5 class="footer-heading">Booking</h5>
                         <ul class="footer-links">
-                            <li><a href="#">My Booking</a></li>
-                            <li><a href="#">Trip Feedback</a></li>
                             <li><a href="#">Safe Travels</a></li>
                             <li><a href="#">Travel Alerts</a></li>
-                            <li><a href="#">Agent Login</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 col-6">
@@ -52,14 +47,13 @@
                         <ul class="footer-links">
                             <li><a href="/about">About Us</a></li>
                             <li><a href="/privacy-policy">Privacy Policy</a></li>
-                            <li><a href="#">B Corp</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 col-6">
                         <h5 class="footer-heading">Contact</h5>
                         <ul class="footer-links">
-                            <li><a href="#">Get in Touch</a></li>
-                            <li><a href="#">Live Chat</a></li>
+                            <li><a href="/contact">Get in Touch</a></li>
                             <li><a href="#">FAQ</a></li>
                             <li><a href="#">Reviews</a></li>
                         </ul>

@@ -1,10 +1,10 @@
 /* Improved Breadcrumb Styling */
 
 .breadcrumb-wrapper {
-  background: linear-gradient(90deg, var(--primary-light), var(--white));
+  background: linear-gradient(90deg, var(--primary-breadcrumb), var(--rgba-white-98));
   backdrop-filter: blur(12px);
   padding: 1rem 0;
-  margin-top: 5rem;
+  margin-top: 5.5rem;
   position: relative;
   z-index: 1;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);

@@ -7,6 +7,33 @@
     background-position: center;
 }
 
+/* Style for View Details button on All Destinations cards */
+.btn-primary-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary-custom:hover {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+    text-decoration: none;
+    color: white;
+}
+
+.btn-primary-custom i {
+    font-size: 1.1rem;
+}
+
 .destinations-hero::before {
     content: "";
     position: relative;
@@ -137,76 +164,11 @@
     backdrop-filter: blur(10px);
     padding: 30px 0;
     border-bottom: 1px solid var(--gray-200);
-    position: sticky;
-    top: 60px;
+    position: relative;
     z-index: 90;
-    backdrop-filter: blur(10px);
-    position: sticky;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.collapsed-filters-heading {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin: 0 15px 0 0;
-    white-space: nowrap;
-}
-
-.filter-toggle-btn {
-    background: var(--white);
-    border: none;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    margin-right: 15px;
-    border-radius: 50%;
-    padding: 6px 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: auto;
-    height: 40px;
-    padding: 0 15px;
-}
-
-.filter-toggle-text {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-.filter-toggle-btn:hover {
-    color: var(--primary-dark);
-    background: var(--primary-light);
-}
-
-.filter-toggle-btn::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.filter-toggle-btn:hover::after,
-.filter-toggle-btn:focus::after {
-    opacity: 1;
-    pointer-events: auto;
 }
 
 /* Filters Wrapper */

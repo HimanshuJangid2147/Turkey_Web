@@ -7,9 +7,8 @@
                 {{-- Profile Header Card --}}
                 <div class="card border-0 shadow-lg mb-4">
                     <div class="card-body text-center bg-dark text-white rounded">
-                        <h4 class="card-title mb-1">Admin User</h4>
-                        <p class="text-light mb-0">admin@example.com</p>
-                        <span class="badge bg-secondary mt-2">Administrator</span>
+                        <h4 class="card-title mb-1">{{ $adminUser->name }}</h4>
+                        <p class="text-light mb-0">{{ $adminUser->email }}</p>
                     </div>
                 </div>
 
@@ -25,7 +24,7 @@
                                     <i class="bi bi-person-fill text-dark me-3"></i>
                                     <div>
                                         <small class="text-muted d-block">Full Name</small>
-                                        <strong class="text-dark">Admin User</strong>
+                                        <strong class="text-dark">{{ $adminUser->name }}</strong>
                                     </div>
                                 </div>
                             </div>
@@ -34,7 +33,7 @@
                                     <i class="bi bi-envelope-fill text-dark me-3"></i>
                                     <div>
                                         <small class="text-muted d-block">Email</small>
-                                        <strong class="text-dark">admin@example.com</strong>
+                                        <strong class="text-dark">{{ $adminUser->email }}</strong>
                                     </div>
                                 </div>
                             </div>
@@ -43,7 +42,7 @@
                                     <i class="bi bi-at text-dark me-3"></i>
                                     <div>
                                         <small class="text-muted d-block">Username</small>
-                                        <strong class="text-dark">adminuser</strong>
+                                        <strong class="text-dark">{{ $adminUser->username }}</strong>
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +51,7 @@
                                     <i class="bi bi-check-circle-fill text-success me-3"></i>
                                     <div>
                                         <small class="text-muted d-block">Email Verified</small>
-                                        <strong class="text-dark">Verified</strong>
+                                        <strong class="text-dark">{{ $adminUser->email_verified_at ? 'Verified' : 'Not Verified' }}</strong>
                                     </div>
                                 </div>
                             </div>
@@ -118,15 +117,15 @@
                         @csrf
                         <div class="mb-3">
                             <label for="name" class="form-label text-dark">Name</label>
-                            <input type="text" class="form-control border-dark" id="name" name="name" value="Admin User">
+                            <input type="text" class="form-control border-dark" id="name" name="name" value="{{ $adminUser->name }}">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label text-dark">Email</label>
-                            <input type="email" class="form-control border-dark" id="email" name="email" value="admin@example.com">
+                            <input type="email" class="form-control border-dark" id="email" name="email" value="{{ $adminUser->email }}">
                         </div>
                         <div class="mb-3">
                             <label for="username" class="form-label text-dark">Username</label>
-                            <input type="text" class="form-control border-dark" id="username" name="username" value="adminuser">
+                            <input type="text" class="form-control border-dark" id="username" name="username" value="{{ $adminUser->username }}">
                         </div>
                         <button type="submit" class="btn btn-dark">Save Changes</button>
                     </form>

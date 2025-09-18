@@ -2,7 +2,7 @@
   <div class="container-fluid px-4">
     <a class="navbar-brand fw-bold" href="/">
       <div class="d-flex align-items-center">
-          <img src="{{ asset('icons/logo.png') }}" alt="Logo" class="brand-icon">
+          <img src="{{ asset('icons/Satguru.gif') }}" alt="Logo" class="brand-icon" height="50" width="80">
         <span class="brand-text ms-2">Turkey Travel</span>
       </div>
     </a>
@@ -15,11 +15,6 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item me-lg-3">
-          <a class="nav-link nav-link-enhanced fw-semibold d-flex align-items-center" href="/">
-            <i class="bi bi-house-door-fill me-1"></i>Home
-          </a>
-        </li>
         <li class="nav-item me-lg-3">
           <a class="nav-link nav-link-enhanced fw-semibold d-flex align-items-center" href="/tours">
             <i class="bi bi-compass-fill me-1"></i>Tours

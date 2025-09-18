@@ -1,36 +1,3 @@
-body {
-    /* Set the height to fill the viewport */
-    min-height: 100vh;
-    margin: 0; /* Removes default body margin */
-
-    /* The animated gradient */
-    background: linear-gradient(
-        -45deg,
-        var(--secondary-color),
-        var(--secondary-dark),
-        var(--accent-color),
-        var(--white),
-        var(--accent-color),
-        var(--secondary-dark),
-        var(--white),
-        var(--secondary-color)
-    );
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 /* Enhanced Hero Section */
 .hero-section {
     overflow: hidden;
@@ -39,7 +6,7 @@ body {
 }
 
 .vh-100 {
-    height: 100vh;
+    height: 90vh;
 }
 
 .vh-75 {
@@ -116,7 +83,7 @@ body {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.3),
+        rgba(121, 121, 121, 0.3),
         transparent
     );
     transition: left 0.6s;
@@ -297,6 +264,9 @@ body {
     box-shadow: 0 12px 35px var(--rgba-black-01);
     transition: all 0.4s ease;
     position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .deals-card:hover {
@@ -357,6 +327,13 @@ body {
     color: var(--primary-color);
     font-weight: 800;
     font-size: 1.3rem;
+}
+
+.deals-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Enhanced Why Choose Us Section */
@@ -457,7 +434,7 @@ body {
 
 /* Enhanced Testimonials */
 .testimonial-card {
-    background: var(--white);
+    background: var(--rgba-white-98);
     border-radius: 24px;
     padding: 2.5rem;
     box-shadow: 0 15px 40px var(--rgba-black-01);

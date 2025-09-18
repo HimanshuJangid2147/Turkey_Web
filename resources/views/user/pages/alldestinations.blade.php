@@ -5,9 +5,9 @@
 <link rel="stylesheet" href="{{ asset('css/user_css/alldestinations.css') }}">
 @endpush
 
-@push('scripts')
+{{-- @push('scripts')
     <script src="{{ asset('js/user/alldestinations.js') }}"></script>
-@endpush
+@endpush --}}
 
 @section('content')
     @php
@@ -199,9 +199,6 @@
                 </div>
             </div>
         </div>
-        <button id="toggleFiltersBtn" class="filter-toggle-btn" aria-label="Toggle Filters" data-tooltip="Hide Filters">
-            <i class="fa fa-eye" aria-hidden="true"></i>
-        </button>
     </section>
 
     <!-- Destinations Grid -->
