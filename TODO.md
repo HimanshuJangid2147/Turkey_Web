@@ -1,5 +1,2 @@
-- [x] Fix "why choose us" section icons to be perfectly round
-  - [x] Ensure .feature-icon has equal width and height
-  - [x] Verify border-radius: 50% creates perfect circle
-  - [x] Check icon centering within the circle
-  - [x] Test visual appearance
+- [x] Add new rgba CSS variables to sitecolor.css for colors used in privacypolicy page
+- [x] Update privacypolicy.blade.php to replace hardcoded rgba values with the new variables

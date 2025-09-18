@@ -14,13 +14,13 @@
     <section class="privacy-policy-section py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10">
+                <div class="col-lg-12">
                     <div class="privacy-card rounded-4 p-5 shadow-lg position-relative overflow-hidden"
-                         style="background: linear-gradient(135deg, var(--rgba-white-48) 0%, rgba(255, 255, 255, 0.6) 100%); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.2);">
+                         style="background: linear-gradient(135deg, var(--rgba-white-48) 0%, var(--rgba-white-60) 100%); backdrop-filter: blur(20px); border: 1px solid var(--rgba-white-60);">
 
                         {{-- Decorative background elements --}}
                         <div class="position-absolute top-0 end-0 opacity-25">
-                            <div class="privacy-decoration" style="width: 200px; height: 200px; background: radial-gradient(circle, rgba(108, 117, 125, 0.1) 0%, transparent 70%); border-radius: 50%; transform: translate(50%, -50%);"></div>
+                            <div class="privacy-decoration" style="width: 200px; height: 200px; background: radial-gradient(circle, var(--rgba-gray-100-05) 0%, transparent 70%); border-radius: 50%; transform: translate(50%, -50%);"></div>
                         </div>
 
                         {{-- Header Section --}}
@@ -50,13 +50,13 @@
                                 <p class="text-muted mb-3">We may collect the following types of information to provide you with the best possible service:</p>
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <div class="info-card h-100 p-3 rounded-3" style="background: rgba(13, 110, 253, 0.05); border-left: 4px solid var(--bs-primary);">
+                                            <div class="info-card h-100 p-3 rounded-3" style="background: var(--rgba-primary-light-60); border-left: 4px solid var(--bs-primary);">
                                             <h5 class="fw-semibold text-primary mb-2">Personal Information</h5>
                                             <p class="small text-muted mb-0">Name, email address, contact details, and other identifying information you provide.</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="info-card h-100 p-3 rounded-3" style="background: rgba(32, 201, 151, 0.05); border-left: 4px solid var(--bs-success);">
+                                            <div class="info-card h-100 p-3 rounded-3" style="background: var(--rgba-secondary-05); border-left: 4px solid var(--bs-success);">
                                             <h5 class="fw-semibold text-success mb-2">Usage Data</h5>
                                             <p class="small text-muted mb-0">IP address, browser type, device information, and interaction patterns.</p>
                                         </div>
@@ -77,7 +77,7 @@
                                 </div>
                                 <p class="text-muted mb-4">Your information helps us deliver exceptional services tailored to your needs:</p>
                                 <div class="usage-list">
-                                    <div class="usage-item d-flex align-items-start mb-3 p-3 rounded-3" style="background: rgba(13, 202, 240, 0.05);">
+                                    <div class="usage-item d-flex align-items-start mb-3 p-3 rounded-3" style="background: var(--rgba-primary-light-60);">
                                         <div class="usage-icon me-3 mt-1">
                                             <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background: var(--bs-info); color: white;">
                                                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -91,7 +91,7 @@
                                             <p class="text-muted small mb-0">Deliver, maintain, and continuously improve our services based on your needs and feedback.</p>
                                         </div>
                                     </div>
-                                    <div class="usage-item d-flex align-items-start mb-3 p-3 rounded-3" style="background: rgba(25, 135, 84, 0.05);">
+                                    <div class="usage-item d-flex align-items-start mb-3 p-3 rounded-3" style="background: var(--rgba-secondary-05);">
                                         <div class="usage-icon me-3 mt-1">
                                             <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background: var(--bs-success); color: white;">
                                                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -104,7 +104,7 @@
                                             <p class="text-muted small mb-0">Respond promptly to your inquiries, support requests, and provide personalized assistance.</p>
                                         </div>
                                     </div>
-                                    <div class="usage-item d-flex align-items-start mb-3 p-3 rounded-3" style="background: rgba(255, 193, 7, 0.05);">
+                                    <div class="usage-item d-flex align-items-start mb-3 p-3 rounded-3" style="background: var(--rgba-yellow-light);">
                                         <div class="usage-icon me-3 mt-1">
                                             <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background: var(--bs-warning); color: white;">
                                                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -131,7 +131,7 @@
                                     </div>
                                     <h2 class="h3 fw-bold text-dark mb-0">Data Security</h2>
                                 </div>
-                                <div class="security-card p-4 rounded-3" style="background: linear-gradient(135deg, rgba(25, 135, 84, 0.05) 0%, rgba(25, 135, 84, 0.02) 100%); border: 1px solid rgba(25, 135, 84, 0.1);">
+                                <div class="security-card p-4 rounded-3" style="background: linear-gradient(135deg, var(--rgba-secondary-05) 0%, rgba(25, 135, 84, 0.02) 100%); border: 1px solid var(--rgba-secondary-05);">
                                     <p class="text-muted mb-3">Your data security is our top priority. We implement comprehensive security measures including:</p>
                                     <div class="row g-3">
                                         <div class="col-md-6">
@@ -173,7 +173,7 @@
                                     </div>
                                     <h2 class="h3 fw-bold text-dark mb-0">Third-Party Services</h2>
                                 </div>
-                                <div class="third-party-card p-4 rounded-3" style="background: rgba(255, 193, 7, 0.05); border-left: 4px solid var(--bs-warning);">
+                                <div class="third-party-card p-4 rounded-3" style="background: var(--rgba-yellow-light); border-left: 4px solid var(--bs-warning);">
                                     <p class="text-muted mb-2">We work with trusted third-party services to enhance your experience, including analytics tools and service providers. These partners may collect information about your usage and behavior to help us improve our services.</p>
                                     <p class="small text-muted mb-0"><strong>Note:</strong> All third-party services are carefully vetted and must comply with our privacy standards.</p>
                                 </div>
@@ -198,7 +198,7 @@
 
                         {{-- Footer CTA --}}
                         <div class="text-center mt-5 pt-4" style="border-top: 1px solid rgba(0,0,0,0.1);">
-                            <div class="contact-info p-4 rounded-3" style="background: rgba(13, 110, 253, 0.05);">
+                        <div class="contact-info p-4 rounded-3" style="background: var(--rgba-primary-light-60);">
                                 <h5 class="fw-semibold text-primary mb-2">Questions About Your Privacy?</h5>
                                 <p class="text-muted small mb-3">We're here to help! If you have any questions or concerns about this Privacy Policy or how we handle your data, please don't hesitate to contact us.</p>
                                 <a href="#" class="btn btn-primary btn-sm rounded-pill px-4">Contact Us</a>
