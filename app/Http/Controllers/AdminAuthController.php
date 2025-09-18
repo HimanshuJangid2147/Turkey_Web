@@ -26,7 +26,7 @@ class AdminAuthController extends Controller
         $adminUser = $this->adminUserRepository->login($credentials);
 
         if ($adminUser) {
-            return redirect()->intended('/admin');
+            return redirect()->route('admin.dashboard');
         }
 
         return back()->withErrors(['username' => 'Invalid credentials.'])->withInput();

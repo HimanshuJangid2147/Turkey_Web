@@ -7,7 +7,8 @@
 
         {{-- Dropdown Toggle for Mobile Sidebar Menu --}}
         <div class="dropdown me-2 d-lg-none">
-            <a class="nav-link text-white dropdown-toggle" href="#" id="mobileSidebarMenuToggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Menu">
+            <a class="nav-link text-white dropdown-toggle" href="#" id="mobileSidebarMenuToggle" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false" title="Menu">
                 Menu
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="mobileSidebarMenuToggle">
@@ -31,13 +32,17 @@
 
         <a class="navbar-brand fs-5" href="#">Admin Panel</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="d-flex ms-auto">
-                <a class="nav-link text-white me-2" href="#">Profile</a>
-                <a class="nav-link text-white" href="#">Sign out</a>
+            <div class="d-flex ms-auto align-items-center">
+                <a class="nav-link text-white me-3" href="{{ route('admin.profile') }}">Profile</a>
+                <form method="POST" action="{{ route('admin.logout') }}">
+                    @csrf
+                    <button type="submit" class="btn btn-dark">Sign out</button>
+                </form>
             </div>
         </div>
     </div>

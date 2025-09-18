@@ -68,7 +68,7 @@ return [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
-        'admin' => [
+        'admin_users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\AdminUser::class),
         ],
