@@ -17,20 +17,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    {{-- Font Awesome Icons --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papb+X6Q6X0+6XQ6X0+6XQ6X0+6XQ6X0+6XQ6X0+6XQ6X0+6XQ6X0+6XQ6X0+6XQ6X0+6XQ6X0+6XQ6X0+6XQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     {{-- Bootstrap Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    {{-- Custom CSS --}}
+    {{-- Common CSS for all pages --}}
+    <link rel="stylesheet" href="{{ asset('css/user_css/bg.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/sitecolor.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/user_css/hero.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/user_css/contact.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/user_css/aboutus.css') }}">
 
-    {{-- Custom CSS for gradient background --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/user_css/graident.css') }}"> --}}
+    {{-- Page-specific CSS --}}
+    @stack('styles')
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100">
@@ -38,6 +39,10 @@
         @include('user.partials.navbar')
     </header>
     <main class="flex-grow-1">
+        {{-- Include Breadcrumb --}}
+        <section class="breadcrumb-section">
+            @include('user.partials.breadcrum')
+        </section>
         @yield('content')
     </main>
     <footer>
@@ -48,61 +53,9 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize carousel with enhanced settings
-            const carouselElement = document.getElementById('heroCarousel');
-            const heroCarousel = new bootstrap.Carousel(carouselElement, {
-                interval: 6000,
-                wrap: true,
-                touch: true,
-                keyboard: true
-            });
+    <script src="{{ asset('js/user/layout.js') }}"></script>
 
-            // Enhanced indicator functionality
-            const indicators = document.querySelectorAll('.carousel-indicators button');
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-
-                    // Remove active class from all indicators
-                    indicators.forEach(ind => ind.classList.remove('active'));
-
-                    // Add active class to clicked indicator
-                    this.classList.add('active');
-
-                    // Navigate to the slide
-                    heroCarousel.to(index);
-                });
-            });
-
-            // Update indicators on slide change
-            carouselElement.addEventListener('slide.bs.carousel', function(e) {
-                indicators.forEach((indicator, index) => {
-                    indicator.classList.toggle('active', index === e.to);
-                });
-            });
-
-            // Pause on hover for better UX
-            carouselElement.addEventListener('mouseenter', () => {
-                heroCarousel.pause();
-            });
-
-            carouselElement.addEventListener('mouseleave', () => {
-                heroCarousel.cycle();
-            });
-
-            // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowLeft') {
-                    heroCarousel.prev();
-                } else if (e.key === 'ArrowRight') {
-                    heroCarousel.next();
-                }
-            });
-        });
-    </script>
+    @stack('scripts')
 </body>
 
 </html>

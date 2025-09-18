@@ -1,5 +1,10 @@
 @extends('user.layouts.app')
 @section('title', 'About Us')
+
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/user_css/aboutus.css') }}">
+@endpush
+
 @section('content')
     @php
         $breadcrumbs = [['title' => 'About Us', 'url' => '/aboutus']];
@@ -30,11 +35,6 @@
             ],
         ];
     @endphp
-
-    {{-- Include Breadcrumb --}}
-    <section class="breadcrumb-section">
-        @include('user.partials.breadcrum')
-    </section>
 
     {{-- Enhanced Hero Section --}}
     <section class="about-hero position-relative overflow-hidden">
@@ -149,181 +149,9 @@
         </div>
     </section>
 
-    {{-- Custom Styles --}}
-    <style>
-        .about-hero {
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .decoration-line {
-            width: 80px;
-            height: 4px;
-            margin: 0 auto;
-            border-radius: 2px;
-        }
-
-        .stat-item {
-            padding: 1rem;
-        }
-
-        .counter {
-            transition: all 0.3s ease;
-        }
-
-        .image-container {
-            height: 400px;
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .hover-scale {
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover .hover-scale {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
-            background: rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .image-container:hover .image-overlay {
-            opacity: 1;
-        }
-
-        .icon-circle {
-            width: 80px;
-            height: 80px;
-            transform: scale(0.8);
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover .icon-circle {
-            transform: scale(1);
-        }
-
-        .icon-badge {
-            transition: all 0.3s ease;
-        }
-
-        .content-wrapper:hover .icon-badge {
-            transform: scale(1.1);
-        }
-
-        .highlight-line {
-            width: 60px;
-            height: 3px;
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-
-        .content-wrapper:hover .highlight-line {
-            width: 100px;
-        }
 
 
-
-        .animate-fade-in {
-            animation: fadeInUp 1s ease;
-        }
-
-        .animate-fade-in-delay {
-            animation: fadeInUp 1s ease 0.3s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .btn {
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        @media (max-width: 768px) {
-            .about-hero {
-                min-height: 50vh;
-            }
-
-            .image-container {
-                height: 250px;
-            }
-
-            .display-4 {
-                font-size: 2.5rem;
-            }
-
-            .display-5 {
-                font-size: 2rem;
-            }
-        }
-    </style>
-
-    {{-- JavaScript for Counter Animation --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const counters = document.querySelectorAll('.counter');
-
-            const animateCounter = (counter) => {
-                const target = parseInt(counter.getAttribute('data-count'));
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    counter.textContent = Math.floor(current);
-                }, 16);
-            };
-
-            // Intersection Observer for counter animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            });
-
-            counters.forEach(counter => observer.observe(counter));
-        });
-    </script>
+    @push('scripts')
+    <script src="{{ asset('js/user/aboutus.js') }}"></script>
+    @endpush
 @endsection

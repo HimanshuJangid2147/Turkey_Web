@@ -7,10 +7,9 @@
     ];
 @endphp
 
-{{-- Include Breadcrumb --}}
-<section class="breadcrumb-section">
-    @include('user.partials.breadcrum')
-</section>
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/user_css/contact.css') }}">
+@endpush
 
 <section class="contact-hero" style="background-image: url('{{ asset('images/Untitled.png') }}');">
     <div class="container contact-hero-content">
@@ -166,22 +165,7 @@
     </div>
 </section>
 
-<script>
-    // Bootstrap form validation
-    (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-            var forms = document.getElementsByClassName('needs-validation');
-            Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-</script>
+@push('scripts')
+<script src="{{ asset('js/user/contact.js') }}"></script>
+@endpush
 @endsection

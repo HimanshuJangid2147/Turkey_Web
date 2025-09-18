@@ -19,24 +19,6 @@ Route::get('/privacy-policy', function () {
     return view('user.pages.privacypolicy');
 });
 
-Route::get('/inbound' ,function() {
+Route::get('/inbound', function() {
     return view('user.pages.inbound');
-});
-
-// Admin Routes
-Route::prefix('admin')->group(function () {
-    Route::middleware('guest:admin')->group(function () {
-        Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login.form');
-        Route::post('/login', [AdminAuthController::class, 'login'])->name('admin.login');
-    });
-
-    // Use your new middleware alias here
-    Route::middleware('auth.admin')->group(function () {
-        Route::get('/', function () {
-            return view('admin.pages.dashboard');
-        })->name('admin.dashboard');
-
-        Route::get('/profile', [AdminAuthController::class, 'showProfileForm'])->name('admin.profile');
-        Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
-    });
 });

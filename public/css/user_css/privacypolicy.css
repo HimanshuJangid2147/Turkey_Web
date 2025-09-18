@@ -1,0 +1,66 @@
+.privacy-card {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.privacy-card:hover {
+    transform: translateY(-2px);
+}
+
+.section-icon svg {
+    transition: transform 0.3s ease;
+}
+
+.privacy-section:hover .section-icon svg {
+    transform: scale(1.1);
+}
+
+.usage-item,
+.info-card {
+    transition: all 0.3s ease;
+}
+
+.usage-item:hover,
+.info-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.security-card,
+.third-party-card,
+.update-card,
+.contact-info {
+    transition: all 0.3s ease;
+}
+
+.security-card:hover,
+.third-party-card:hover,
+.update-card:hover,
+.contact-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .privacy-card {
+        padding: 2rem !important;
+    }
+
+    .display-4 {
+        font-size: 2rem !important;
+    }
+
+    .usage-item:hover,
+    .info-card:hover {
+        transform: none;
+    }
+}

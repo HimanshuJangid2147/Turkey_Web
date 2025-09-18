@@ -1,0 +1,32 @@
+body {
+    /* Set the height to fill the viewport */
+    min-height: 100vh;
+    margin: 0; /* Removes default body margin */
+
+    /* The animated gradient */
+    background: linear-gradient(
+        -45deg,
+        var(--secondary-color),
+        var(--secondary-dark),
+        var(--accent-color),
+        var(--white),
+        var(--accent-color),
+        var(--secondary-dark),
+        var(--white),
+        var(--secondary-color)
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
