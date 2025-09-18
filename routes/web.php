@@ -19,6 +19,6 @@ Route::get('/privacy-policy', function () {
     return view('user.pages.privacypolicy');
 });
 
-Route::get('/inbound', function() {
-    return view('user.pages.inbound');
+Route::get('/destinations', function() {
+    return view('user.pages.alldestinations');
 });

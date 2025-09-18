@@ -2,9 +2,7 @@
   <div class="container-fluid px-4">
     <a class="navbar-brand fw-bold" href="/">
       <div class="d-flex align-items-center">
-        <div class="brand-icon-wrapper">
-          <i class="bi bi-airplane-fill brand-icon"></i>
-        </div>
+          <img src="{{ asset('icons/logo.png') }}" alt="Logo" class="brand-icon">
         <span class="brand-text ms-2">Turkey Travel</span>
       </div>
     </a>
@@ -43,5 +41,5 @@
 </nav>
 
 @push('scripts')
-<script src="{{ asset('js/user/navbar.js') }}"></script>
+    <script src="{{ asset('js/user/navbar.js') }}"></script>
 @endpush

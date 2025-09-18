@@ -2,11 +2,11 @@
 @section('title', 'All Destinations - Inbound Tours')
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/user_css/inbound.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user_css/alldestinations.css') }}">
 @endpush
 
 @push('scripts')
-    <script src="{{ asset('js/user/inbound.js') }}"></script>
+    <script src="{{ asset('js/user/alldestinations.js') }}"></script>
 @endpush
 
 @section('content')
