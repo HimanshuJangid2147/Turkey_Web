@@ -28,7 +28,7 @@ Route::prefix('admin')->group(function () {
         Route::delete('/hero-slider/{id}/destroy', [HeroSliderController::class, 'destroy'])->name('admin.heroslider.destroy');
         Route::put('/hero-slider/{id}', [HeroSliderController::class, 'update'])->name('admin.heroslider.update');
         Route::patch('/hero-slider/{id}/toggle-status', [HeroSliderController::class, 'toggleStatus'])->name('admin.heroslider.toggle-status');
-        Route::get('/hero-slider/{id}', [HeroSliderController::class, 'show'])->name('admin.heroslider.view');
         Route::get('/hero-slider/data', [HeroSliderController::class, 'data'])->name('admin.heroslider.data');
+        Route::get('/hero-slider/{id}', [HeroSliderController::class, 'show'])->name('admin.heroslider.view');
     });
 });

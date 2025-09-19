@@ -23,6 +23,12 @@
 
     <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/fonts/iconify-icons.css') }}" />
 
+    <!-- Added Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Added DataTables CSS CDN -->
+    <link href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/css/core.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin_assets/assets/css/demo.css') }}" />
 

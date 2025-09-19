@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('link')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->string('pagename')->nullable();
             $table->timestamps();
         });
     }

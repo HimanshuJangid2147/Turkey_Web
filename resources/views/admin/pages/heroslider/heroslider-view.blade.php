@@ -7,7 +7,7 @@
     <span class="text-muted fw-light">Hero Slider /</span> View
 </h4>
 
-{{-- <div class="row">
+<div class="row">
     <div class="col-md-12">
         <div class="card mb-4">
             <h5 class="card-header">Hero Slider Details</h5>
@@ -34,5 +34,5 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
 @endsection

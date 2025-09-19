@@ -23,7 +23,8 @@ class HeroSliderController extends Controller
 
     public function create()
     {
-        return view('admin.pages.heroslider.heroslider-edit');
+        $slider = null;
+        return view('admin.pages.heroslider.heroslider-edit', compact('slider'));
     }
 
     public function show($id)
@@ -47,6 +48,8 @@ class HeroSliderController extends Controller
             'description' => 'nullable|string',
             'status' => 'required|in:active,inactive',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'link' => 'nullable|string|max:255',
+            'pagename' => 'nullable|string|max:255',
         ]);
 
         if ($request->hasFile('image')) {
@@ -59,6 +62,8 @@ class HeroSliderController extends Controller
             'description' => $data['description'],
             'status' => $data['status'],
             'image' => $data['image'] ?? null,
+            'link' => $data['link'] ?? null,
+            'pagename' => $data['pagename'] ?? null,
         ]);
 
         return redirect()->route('admin.heroslider')->with('success', 'Hero slider created successfully.');
@@ -71,12 +76,16 @@ class HeroSliderController extends Controller
             'description' => 'nullable|string',
             'status' => 'required|in:active,inactive',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'link' => 'nullable|string|max:255',
+            'pagename' => 'nullable|string|max:255',
         ]);
 
         $updateData = [
             'title' => $data['heading'],
             'description' => $data['description'],
             'status' => $data['status'],
+            'link' => $data['link'] ?? null,
+            'pagename' => $data['pagename'] ?? null,
         ];
 
         if ($request->hasFile('image')) {
@@ -98,66 +107,40 @@ class HeroSliderController extends Controller
         return redirect()->route('admin.heroslider')->with('success', 'Status updated successfully.');
     }
 
+    public function destroy($id)
+    {
+        $this->sliderRepository->delete($id);
+
+        return redirect()->route('admin.heroslider')->with('success', 'Hero slider deleted successfully.');
+    }
+
     public function data(Request $request)
     {
-        dd('hhh');
         if ($request->ajax()) {
             $query = $this->sliderRepository->getForDataTable(); // Fetches HeroSlider::query()
-            dd($query->get());
             return DataTables::of($query)
                 ->addIndexColumn() // Corresponds to 'Sr No'
                 ->editColumn('image', function ($slider) {
-                    // Replicates your image display logic, including the fallback
-                    $imageUrl = $slider->image
-                                ? asset('storage/'.$slider->image)
-                                : asset('images/Untitled.png');
-
-                    return '<img src="'.$imageUrl.'" alt="Hero Slider Image" height="80" width="160">';
+                    return $slider->image ?: 'images/Untitled.png';
                 })
                 ->editColumn('title', function ($slider) {
-                    // Replicates your Str::words for the title
-                    return '<span>'.Str::words($slider->title, 2, '...').'</span>';
+                    return Str::words($slider->title, 2, '...');
                 })
                 ->editColumn('description', function ($slider) {
-                    // Replicates your Str::words for the description, including the full-text title attribute
-                    return '<span title="'.e($slider->description).'">'.Str::words($slider->description, 2, '...').'</span>';
+                    return Str::words($slider->description, 2, '...');
+                })
+                ->addColumn('link', function ($slider) {
+                    return $slider->link;
+                })
+                ->addColumn('pagename', function ($slider) {
+                    return $slider->pagename;
                 })
                 ->addColumn('status', function ($slider) {
-                    // Builds the status toggle form and button
-                    $route = route('admin.heroslider.toggle-status', $slider->id);
-                    $csrf = csrf_field();
-                    $method = method_field('PATCH');
-                    $class = $slider->status == 'active' ? 'primary' : 'secondary';
-                    $text = ucfirst($slider->status);
-
-                    return <<<HTML
-                <form action="$route" method="POST" style="display: inline;">
-                    $csrf
-                    $method
-                    <button type="submit" class="badge bg-label-$class me-1 border-0" style="background: none; cursor: pointer;">$text</button>
-                </form>
-                HTML;
+                    return $slider->status;
                 })
                 ->addColumn('action', function ($slider) {
-                    // Builds the entire actions dropdown
-                    $editUrl = route('admin.heroslider.edit', $slider->id);
-                    $viewUrl = route('admin.heroslider.view', $slider->id);
-
-                    // You'll need to add a proper delete form/modal later
-                    return <<<HTML
-                <div class="dropdown">
-                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                        <i class="icon-base bx bx-dots-vertical-rounded"></i>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="$editUrl"><i class="icon-base bx bx-edit-alt me-1"></i> Edit</a>
-                        <a class="dropdown-item" href="$viewUrl"><i class="icon-base bx bx-detail me-1"></i> View</a>
-                        <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-trash me-1"></i> Delete</a>
-                    </div>
-                </div>
-                HTML;
+                    return $slider->id;
                 })
-                ->rawColumns(['image', 'title', 'description', 'status', 'action']) // Allow HTML in these columns
                 ->make(true);
         }
     }
