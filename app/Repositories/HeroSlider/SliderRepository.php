@@ -33,7 +33,7 @@
 
         public function getForDataTable()
         {
-            return HeroSlider::query();
+            return HeroSlider::select(['*']);
         }
     }
 ?>

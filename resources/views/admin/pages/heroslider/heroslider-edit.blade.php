@@ -13,7 +13,7 @@
             {{-- existing image preview --}}
             @if(isset($slider) && $slider->image)
             <div class="card-body">
-                <img src="{{ asset('images/' . $slider->image) }}" alt="Hero Slider Image" class="img-fluid rounded" style="max-height: 50vh;">
+                <img src="{{ asset($slider->image ? 'storage/' . $slider->image : 'images/Untitled.png') }}" alt="Hero Slider Image" class="img-fluid rounded" style="max-height: 50vh;">
             </div>
             @endif
             <h5 class="card-header">{{ isset($slider) ? 'Edit' : 'Create' }} Hero Slider</h5>
@@ -44,7 +44,7 @@
                             <input type="file" class="form-control" id="image" name="image" accept="image/*" />
                             <p class="text-muted mb-0">Allowed JPG, PNG, GIF. Max size of 2MB</p>
                             {{-- current image preview --}}
-                            <img src="{{ asset('images/' . ($slider->image ?? 'Untitled.png')) }}" alt="Hero Slider Image" class="img-fluid rounded" style="max-height: 20vh;">
+                            <img src="{{ asset($slider->image ? 'storage/' . $slider->image : 'images/Untitled.png') }}" alt="Hero Slider Image" class="img-fluid rounded" style="max-height: 20vh;">
                         </div>
                     </div>
                     <div class="mt-2">

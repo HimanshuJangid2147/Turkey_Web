@@ -7,7 +7,7 @@
     <span class="text-muted fw-light">Hero Slider /</span> View
 </h4>
 
-<div class="row">
+{{-- <div class="row">
     <div class="col-md-12">
         <div class="card mb-4">
             <h5 class="card-header">Hero Slider Details</h5>
@@ -15,7 +15,7 @@
                 <div class="mb-3">
                     <label class="form-label">Image</label>
                     <div>
-                        <img src="{{ asset('.public/images/' . ($slider->image ?? 'Untitled.png')) }}" alt="Hero Slider Image" class="img-fluid rounded" style="max-height: 200px;">
+                        <img src="{{ asset($slider->image ? 'storage/' . $slider->image : 'images/Untitled.png') }}" alt="Hero Slider Image" class="img-fluid rounded" style="max-height: 200px;">
                     </div>
                 </div>
                 <div class="mb-3">
@@ -34,5 +34,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
