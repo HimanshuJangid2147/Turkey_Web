@@ -1,49 +1,79 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top shadow-sm">
-    <div class="container-fluid">
-        {{-- Toggle for the desktop sidebar collapse --}}
-        <button class="btn btn-outline-light me-3 d-none d-lg-block" id="sidebarToggle" aria-label="Toggle sidebar">
-            <i class="bi bi-list"></i>
-        </button>
+<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+    id="layout-navbar">
+    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+            <i class="bx bx-menu bx-sm"></i>
+        </a>
+    </div>
 
-        {{-- Dropdown Toggle for Mobile Sidebar Menu --}}
-        <div class="dropdown me-2 d-lg-none">
-            <a class="nav-link text-white dropdown-toggle" href="#" id="mobileSidebarMenuToggle" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false" title="Menu">
-                Menu
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="mobileSidebarMenuToggle">
-                <li>
-                    <a class="dropdown-item" href="#" title="Dashboard">
-                        <i class="bi bi-speedometer2 me-2"></i>Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#" title="Users">
-                        <i class="bi bi-people me-2"></i>Users
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#" title="Products">
-                        <i class="bi bi-box me-2"></i>Products
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <a class="navbar-brand fs-5" href="#">Admin Panel</a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="d-flex ms-auto align-items-center">
-                <a class="nav-link text-white me-3" href="{{ route('admin.profile') }}">Profile</a>
-                <form method="POST" action="{{ route('admin.logout') }}">
-                    @csrf
-                    <button type="submit" class="btn btn-dark">Sign out</button>
-                </form>
+    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+        <div class="navbar-nav align-items-center">
+            <div class="nav-item d-flex align-items-center">
+                <i class="bx bx-search fs-4 lh-0"></i>
+                <input type="text" class="form-control border-0 shadow-none ps-1 ps-sm-2" placeholder="Search..."
+                    aria-label="Search..." />
             </div>
         </div>
+        <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                        <img src="{{ asset('admin_assets/assets/img/avatars/1.png') }}" alt
+                            class="w-px-40 h-auto rounded-circle" />
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a class="dropdown-item" href="javascript:void(0);">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 me-3">
+                                    <div class="avatar avatar-online">
+                                        <img src="{{ asset('admin_assets/assets/img/avatars/1.png') }}" alt
+                                            class="w-px-40 h-auto rounded-circle" />
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <span class="fw-medium d-block">{{ Auth::user()->name }}</span>
+                                    <small class="text-muted">Admin</small>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                        <form method="GET" action="{{ route('admin.profile') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item">
+                                <i class="bx bx-user me-2"></i>
+                                <span class="align-middle">My Profile</span>
+                            </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <i class="bx bx-cog me-2"></i>
+                            <span class="align-middle">Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                    </li>
+                    <li>
+                        <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                        <form method="POST" action="{{ route('admin.logout') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item">
+                                <i class="bx bx-power-off me-2"></i>
+                                <span class="align-middle">Log Out</span>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </nav>

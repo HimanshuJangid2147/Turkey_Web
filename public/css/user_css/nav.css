@@ -1,9 +1,9 @@
 /* Enhanced Navbar using your color scheme only */
 #mainNavbar {
-    background-color: var(--rgba-white-98);
+    /* background-color: var(--rgba-white-98); */
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
     box-shadow: 0 2px 15px var(--rgba-black-02);
 }
 

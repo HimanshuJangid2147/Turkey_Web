@@ -6,7 +6,7 @@
             <div class="col-lg-3 col-md-12">
                 <div class="footer-card">
                     <div class="footer-brand">
-                            <img src="{{ asset('icons/Satguru.gif') }}" alt="Logo" class="footer-brand-icon" height="50" width="80">
+                            <img src="{{ asset('icons/Satguru-new-preloader.gif') }}" alt="Logo" class="footer-brand-icon" height="50" width="80">
                         <h4 class="footer-brand-text">Turkey Travel</h4>
                     </div>
                     <p class="footer-card-description">

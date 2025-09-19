@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\AdminAuth\AdminUserRepository;
 use App\Repositories\AdminAuth\AdminUserRepositoryInterface;
+use App\Repositories\HeroSlider\SliderRepository;
+use App\Repositories\HeroSlider\SliderRepositoryInterface;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -14,6 +16,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(AdminUserRepositoryInterface::class, AdminUserRepository::class);
+        $this->app->bind(SliderRepositoryInterface::class, SliderRepository::class);
     }
 
     /**

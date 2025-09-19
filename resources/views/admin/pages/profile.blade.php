@@ -1,136 +1,105 @@
 @extends('admin.layouts.app')
-@section('title', 'Admin Profile')
+
+@section('title', 'Account Settings')
+
+@push('scripts')
+    <script src="{{ asset('admin_assets/assets/js/pages-account-settings-account.js') }}"></script>
+@endpush
+
 @section('content')
-    <div class="container-fluid mt-4">
-        <div class="row">
-            <div class="col-12">
-                {{-- Profile Header Card --}}
-                <div class="card border-0 shadow-lg mb-4">
-                    <div class="card-body text-center bg-dark text-white rounded">
-                        <h4 class="card-title mb-1">{{ $adminUser->name }}</h4>
-                        <p class="text-light mb-0">{{ $adminUser->email }}</p>
-                    </div>
-                </div>
+<h4 class="py-3 mb-4">
+    <span class="text-muted fw-light">Account Settings /</span> Account
+</h4>
 
-                {{-- Profile Information Card --}}
-                <div class="card border-0 shadow mb-4">
-                    <div class="card-header bg-secondary text-white">
-                        <h5 class="mb-0"><i class="bi bi-person-circle me-2"></i>{{ __('Profile Information') }}</h5>
-                    </div>
-                    <div class="card-body bg-light">
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-person-fill text-dark me-3"></i>
-                                    <div>
-                                        <small class="text-muted d-block">Full Name</small>
-                                        <strong class="text-dark">{{ $adminUser->name }}</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-envelope-fill text-dark me-3"></i>
-                                    <div>
-                                        <small class="text-muted d-block">Email</small>
-                                        <strong class="text-dark">{{ $adminUser->email }}</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-at text-dark me-3"></i>
-                                    <div>
-                                        <small class="text-muted d-block">Username</small>
-                                        <strong class="text-dark">{{ $adminUser->username }}</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-check-circle-fill text-success me-3"></i>
-                                    <div>
-                                        <small class="text-muted d-block">Email Verified</small>
-                                        <strong class="text-dark">{{ $adminUser->email_verified_at ? 'Verified' : 'Not Verified' }}</strong>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-white border-0">
-                        <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#editProfileModal">
-                            <i class="bi bi-pencil-square me-1"></i>Edit Profile
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <h5 class="card-header">Profile Details</h5>
+            {{-- <div class="card-body">
+                <div class="d-flex align-items-start align-items-sm-center gap-4">
+                    <img src="{{ asset('admin_assets/assets/img/avatars/1.png') }}" alt="user-avatar"
+                        class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
+                    <div class="button-wrapper">
+                        <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                            <span class="d-none d-sm-block">Upload new photo</span>
+                            <i class="bx bx-upload d-block d-sm-none"></i>
+                            <input type="file" id="upload" class="account-file-input" hidden
+                                accept="image/png, image/jpeg" />
+                        </label>
+                        <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
+                            <i class="bx bx-reset d-block d-sm-none"></i>
+                            <span class="d-none d-sm-block">Reset</span>
                         </button>
+                        <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
                     </div>
                 </div>
-
-                {{-- Change Password Card --}}
-                <div class="card border-0 shadow">
-                    <div class="card-header bg-secondary text-white">
-                        <h5 class="mb-0"><i class="bi bi-shield-lock me-2"></i>{{ __('Change Password') }}</h5>
+            </div> --}}
+            <hr class="my-0" />
+            <div class="card-body">
+                <form id="formAccountSettings" method="POST" action="#">
+                    @csrf
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input class="form-control" type="text" id="name" name="name" value="{{ $adminUser->name }}"
+                                autofocus />
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="username" class="form-label">Username</label>
+                            <input class="form-control" type="text" name="username" id="username" value="{{ $adminUser->username }}" />
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input class="form-control" type="text" id="email" name="email" value="{{ $adminUser->email }}"
+                                placeholder="john.doe@example.com" />
+                        </div>
+                         <div class="mb-3 col-md-6">
+                            <label for="email_verified" class="form-label">Email Status</label>
+                             <input type="text" class="form-control" id="email_verified" name="email_verified" value="{{ $adminUser->email_verified_at ? 'Verified' : 'Not Verified' }}" readonly/>
+                        </div>
                     </div>
-                    <div class="card-body bg-light">
-                        <form method="POST" action="#" id="changePasswordForm">
-                            @csrf
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <label for="current_password" class="form-label text-dark">
-                                        <i class="bi bi-key-fill text-warning me-1"></i>{{ __('Current Password') }}
-                                    </label>
-                                    <input id="current_password" type="password" class="form-control border-dark" name="current_password" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="new_password" class="form-label text-dark">
-                                        <i class="bi bi-lock-fill text-success me-1"></i>{{ __('New Password') }}
-                                    </label>
-                                    <input id="new_password" type="password" class="form-control border-dark" name="new_password" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="new_password_confirmation" class="form-label text-dark">
-                                        <i class="bi bi-lock-fill text-success me-1"></i>{{ __('Confirm New Password') }}
-                                    </label>
-                                    <input id="new_password_confirmation" type="password" class="form-control border-dark" name="new_password_confirmation" required>
-                                </div>
-                            </div>
-                            <div class="d-grid mt-4">
-                                <button type="submit" class="btn btn-dark">
-                                    <i class="bi bi-check-circle me-2"></i>{{ __('Change Password') }}
-                                </button>
-                            </div>
-                        </form>
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-primary me-2">Save changes</button>
+                        <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                     </div>
-                </div>
+                </form>
             </div>
+            </div>
+
+        <div class="card mb-4">
+             <h5 class="card-header">Change Password</h5>
+             <div class="card-body">
+                 <form method="POST" action="#" id="changePasswordForm">
+                     @csrf
+                     <div class="row">
+                         <div class="mb-3 col-12 form-password-toggle">
+                             <label class="form-label" for="current_password">Current Password</label>
+                             <div class="input-group input-group-merge">
+                                 <input type="password" name="current_password" class="form-control" id="current_password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"/>
+                                 <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                            </div>
+                         </div>
+                         <div class="mb-3 col-md-6 form-password-toggle">
+                             <label class="form-label" for="new_password">New Password</label>
+                             <div class="input-group input-group-merge">
+                                <input class="form-control" type="password" id="new_password" name="new_password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"/>
+                                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                             </div>
+                         </div>
+                         <div class="mb-3 col-md-6 form-password-toggle">
+                            <label class="form-label" for="new_password_confirmation">Confirm New Password</label>
+                             <div class="input-group input-group-merge">
+                                <input class="form-control" type="password" name="new_password_confirmation" id="new_password_confirmation" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"/>
+                                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                            </div>
+                         </div>
+                     </div>
+                     <div class="mt-2">
+                        <button type="submit" class="btn btn-primary me-2">Change Password</button>
+                     </div>
+                 </form>
+             </div>
         </div>
     </div>
-
-    {{-- Edit Profile Modal --}}
-    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content border-0 shadow-lg">
-                <div class="modal-header bg-secondary text-white">
-                    <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body bg-light">
-                    <form method="POST" action="#">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="name" class="form-label text-dark">Name</label>
-                            <input type="text" class="form-control border-dark" id="name" name="name" value="{{ $adminUser->name }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label text-dark">Email</label>
-                            <input type="email" class="form-control border-dark" id="email" name="email" value="{{ $adminUser->email }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="username" class="form-label text-dark">Username</label>
-                            <input type="text" class="form-control border-dark" id="username" name="username" value="{{ $adminUser->username }}">
-                        </div>
-                        <button type="submit" class="btn btn-dark">Save Changes</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 @endsection

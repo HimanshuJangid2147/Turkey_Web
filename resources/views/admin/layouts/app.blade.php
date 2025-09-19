@@ -1,54 +1,72 @@
 <!doctype html>
-<html lang="en">
+
+<html lang="en" class="layout-menu-fixed layout-compact" data-assets-path="../admin_assets/assets/"
+    data-template="vertical-menu-template-free">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Admin Dashboard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    {{-- Bootstrap CSS --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{-- Dynamic Title --}}
+    <title>@yield('title', 'Sneat Dashboard') | Admin Panel</title>
 
-    {{-- Bootstrap Icons --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <meta name="description" content="" />
 
-    {{-- Custom CSS for full-height sidebar and top padding --}}
-    <link href="{{ asset('css/admin_css/main.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ asset('admin_assets/assets/img/favicon/favicon.ico') }}" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/fonts/iconify-icons.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/css/core.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin_assets/assets/css/demo.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    <link rel="stylesheet" href="{{ asset('admin_assets/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+
+    @stack('styles')
+
+    <script src="{{ asset('admin_assets/assets/vendor/js/helpers.js') }}"></script>
+    <script src="{{ asset('admin_assets/assets/js/config.js') }}"></script>
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body>
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
 
-    {{-- Include the separate navbar file --}}
-    @include('admin.partials.navbar')
+            @include('admin.partials.sidebar')
+            <div class="layout-page">
 
-    {{-- Main Container (Sidebar & Content) --}}
-    <div class="d-flex flex-grow-1">
+                @include('admin.partials.navbar')
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        @yield('content')
+                    </div>
+                    @include('admin.partials.footer')
+                    <div class="content-backdrop fade"></div>
+                </div>
+                </div>
+            </div>
 
-        {{-- Include the separate sidebar file --}}
-        @include('admin.partials.sidebar')
-
-        {{-- Main Content Area --}}
-        <main class="flex-grow-1 p-4 main-content">
-            @yield('content')
-        </main>
-
+        <div class="layout-overlay layout-menu-toggle"></div>
     </div>
 
-    {{-- Include the separate footer file --}}
-    @include('admin.partials.footer')
-    {{-- Bootstrap JS --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('admin_assets/assets/vendor/libs/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('admin_assets/assets/vendor/libs/popper/popper.js') }}"></script>
+    <script src="{{ asset('admin_assets/assets/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('admin_assets/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('admin_assets/assets/vendor/js/menu.js') }}"></script>
+
+    <script src="{{ asset('admin_assets/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
+
+    <script src="{{ asset('admin_assets/assets/js/main.js') }}"></script>
+
     @stack('scripts')
 
-    {{-- Sidebar Toggle Script --}}
-    <script>
-        document.getElementById('sidebarToggle').addEventListener('click', function() {
-            const body = document.body;
-            if (window.innerWidth >= 992) {
-                body.classList.toggle('sidebar-collapsed');
-            }
-        });
-    </script>
 </body>
-
 </html>

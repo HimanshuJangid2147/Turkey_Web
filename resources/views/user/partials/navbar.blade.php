@@ -2,7 +2,7 @@
   <div class="container-fluid px-4">
     <a class="navbar-brand fw-bold" href="/">
       <div class="d-flex align-items-center">
-          <img src="{{ asset('icons/Satguru.gif') }}" alt="Logo" class="brand-icon" height="50" width="80">
+          <img src="{{ asset('icons/Satguru-new-preloader.gif') }}" alt="Logo" class="brand-icon" height="60" width="100">
         <span class="brand-text ms-2">Turkey Travel</span>
       </div>
     </a>
