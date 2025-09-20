@@ -17,9 +17,18 @@ const galleryImages = [
     'images/Antalya.jpg'
 ];
 
+// Pre-generate asset URLs for gallery images
+const galleryImageUrls = galleryImages.map(image => `/images/${image}`);
+
 function initializeGallery() {
     // Gallery modal functionality is already handled by onclick attributes
     // This function can be extended for additional gallery features
+
+    // Add click handlers for thumbnail items
+    const thumbnailItems = document.querySelectorAll('.thumbnail-item');
+    thumbnailItems.forEach((item, index) => {
+        item.addEventListener('click', () => openGallery(index + 1)); // +1 because first image is main
+    });
 }
 
 function openGallery(index) {
@@ -27,16 +36,55 @@ function openGallery(index) {
     const modal = document.getElementById('galleryModal');
     const modalImage = document.getElementById('modalImage');
 
-    modalImage.src = '{{ asset("' + galleryImages[index] + '") }}';
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    if (modal && modalImage) {
+        // Ensure modal is properly reset
+        modal.classList.remove('active');
+        modal.style.pointerEvents = 'none';
+
+        // Set image source
+        modalImage.src = galleryImageUrls[currentImageIndex];
+
+        // Small delay to ensure image loads
+        setTimeout(() => {
+            modal.classList.add('active');
+            modal.style.pointerEvents = 'auto';
+            preventBodyScroll();
+
+            // Add fade-in effect
+            modalImage.style.opacity = '0';
+            setTimeout(() => {
+                modalImage.style.opacity = '1';
+            }, 50);
+        }, 10);
+    }
 }
 
 function closeGallery() {
     const modal = document.getElementById('galleryModal');
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    const modalImage = document.getElementById('modalImage');
+
+    if (modal && modalImage) {
+        modalImage.style.opacity = '0';
+        setTimeout(() => {
+            modal.classList.remove('active');
+            allowBodyScroll();
+            // Reset pointer events
+            modal.style.pointerEvents = 'none';
+        }, 300);
+    }
 }
+
+// Close modal when clicking outside of it
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById('galleryModal');
+    const modalContent = modal?.querySelector('.modal-content');
+
+    if (modal && modal.classList.contains('active')) {
+        if (e.target === modal || (modalContent && !modalContent.contains(e.target))) {
+            closeGallery();
+        }
+    }
+});
 
 function nextImage() {
     currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
@@ -50,7 +98,14 @@ function previousImage() {
 
 function updateGalleryImage() {
     const modalImage = document.getElementById('modalImage');
-    modalImage.src = '{{ asset("' + galleryImages[currentImageIndex] + '") }}';
+
+    if (modalImage) {
+        modalImage.style.opacity = '0';
+        setTimeout(() => {
+            modalImage.src = galleryImageUrls[currentImageIndex];
+            modalImage.style.opacity = '1';
+        }, 150);
+    }
 }
 
 // Booking form functionality
@@ -392,3 +447,28 @@ function initializeLazyLoading() {
 
 // Initialize lazy loading when DOM is ready
 document.addEventListener('DOMContentLoaded', initializeLazyLoading);
+
+// Window resize handler to close modal if needed
+window.addEventListener('resize', function() {
+    const modal = document.getElementById('galleryModal');
+    if (modal && modal.classList.contains('active')) {
+        // Close modal on resize to prevent layout issues
+        closeGallery();
+    }
+});
+
+// Prevent body scroll when modal is active
+function preventBodyScroll() {
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+}
+
+function allowBodyScroll() {
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+}

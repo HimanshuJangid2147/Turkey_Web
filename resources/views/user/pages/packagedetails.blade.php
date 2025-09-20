@@ -28,7 +28,7 @@
             'rating' => 4.8,
             'review_count' => 1247,
             'location' => 'Istanbul, Turkey',
-            'difficulty' => 'Easy',
+            'minimum_age' => 18,
             'group_size' => '2-15 People',
             'main_image' => 'images/Istanbul-Sightseeing.jpg',
             'gallery' => [
@@ -128,7 +128,6 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 {{ $package->location }}
                             </span>
-                            <span class="difficulty-badge">{{ $package->difficulty }}</span>
                         </div>
                         <h1 class="hero-title">{{ $package->name }}</h1>
                         <p class="hero-subtitle">{{ $package->subtitle }}</p>
@@ -176,22 +175,9 @@
                         </div>
 
                         <div class="booking-form">
-                            <div class="form-group">
-                                <label>Departure Date</label>
-                                <input type="date" class="form-control" id="departureDate">
-                            </div>
-                            <div class="form-group">
-                                <label>Travelers</label>
-                                <select class="form-control" id="travelers">
-                                    <option value="1">1 Traveler</option>
-                                    <option value="2">2 Travelers</option>
-                                    <option value="3">3 Travelers</option>
-                                    <option value="4">4 Travelers</option>
-                                </select>
-                            </div>
                             <button class="btn-book-now" id="bookNowBtn">
-                                <span>Book Now</span>
-                                <i class="fas fa-arrow-right"></i>
+                                <span>Select Dates</span>
+                                <i class="fa fa-arrow-right"></i>
                             </button>
                         </div>
 
@@ -244,8 +230,8 @@
                                 <span class="value">{{ $package->location }}</span>
                             </div>
                             <div class="info-item">
-                                <span class="label">Difficulty:</span>
-                                <span class="value">{{ $package->difficulty }}</span>
+                                <span class="label">Minimum Age:</span>
+                                <span class="value">{{ $package->minimum_age }}+</span>
                             </div>
                             <div class="info-item">
                                 <span class="label">Group Size:</span>
