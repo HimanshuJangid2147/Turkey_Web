@@ -1,0 +1,224 @@
+/* Enhanced Dropdown Styles for Scrollable and Responsive Dropdowns - Updated for Turkey Travel Color Scheme */
+
+/* Scrollable dropdown container */
+.dropdown-scrollable {
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px var(--rgba-black-03);
+    border: 1px solid var(--rgba-primary-01);
+    backdrop-filter: blur(15px);
+    background-color: var(--rgba-white-98);
+    margin-top: 0.5rem;
+    min-width: 280px;
+}
+
+/* Custom scrollbar for dropdown */
+.dropdown-scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-scrollable::-webkit-scrollbar-track {
+    background: var(--rgba-primary-01);
+    border-radius: 3px;
+}
+
+.dropdown-scrollable::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.dropdown-scrollable::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Dropdown grid layout */
+.dropdown-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0.5rem 0;
+}
+
+/* Responsive grid for larger screens */
+@media (min-width: 992px) {
+    .dropdown-grid {
+        grid-template-columns: 1fr 1fr;
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .dropdown-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 900px;
+    }
+}
+
+/* Dropdown items in grid */
+.dropdown-grid .dropdown-item {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin: 0.25rem;
+    transition: all 0.3s ease;
+    border: none;
+    background: transparent;
+    color: var(--gray-700) !important;
+    font-weight: 500;
+}
+
+.dropdown-grid .dropdown-item:hover {
+    background-color: var(--rgba-primary-01);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px var(--rgba-primary-03);
+    color: var(--primary-color) !important;
+}
+
+.dropdown-grid .dropdown-item i {
+    color: var(--primary-color);
+    transition: transform 0.2s ease;
+}
+
+.dropdown-grid .dropdown-item:hover i {
+    transform: scale(1.1);
+    color: var(--primary-dark);
+}
+
+/* Dropdown dividers in grid */
+.dropdown-grid .dropdown-divider {
+    margin: 0.5rem 1rem;
+    border-color: var(--rgba-primary-02);
+}
+
+/* Dropdown headers in grid */
+.dropdown-grid .dropdown-header {
+    padding: 1rem 1rem 0.5rem;
+    margin: 0;
+    color: var(--gray-600);
+    font-weight: 600;
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Special styling for "View All" button */
+.dropdown-grid .dropdown-item.text-center {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--white) !important;
+    margin: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 2px 8px var(--rgba-primary-03);
+}
+
+.dropdown-grid .dropdown-item.text-center:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--rgba-primary-06);
+    color: var(--white) !important;
+}
+
+/* Mobile dropdown enhancements */
+@media (max-width: 991.98px) {
+    .dropdown-scrollable {
+        max-height: 60vh;
+        margin: 0 1rem;
+        border-radius: 12px;
+        min-width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        z-index: 1050;
+    }
+
+    .dropdown-grid {
+        grid-template-columns: 1fr;
+        padding: 0.25rem 0;
+    }
+
+    .dropdown-grid .dropdown-item {
+        padding: 1rem;
+        margin: 0.5rem 0;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+
+    .dropdown-grid .dropdown-header {
+        padding: 0.75rem 1rem 0.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 575.98px) {
+    .dropdown-scrollable {
+        max-height: 50vh;
+        margin: 0 0.5rem;
+        min-width: calc(100vw - 1rem);
+        left: 0;
+        transform: none;
+    }
+
+    .dropdown-grid .dropdown-item {
+        padding: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .dropdown-grid .dropdown-header {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem 0.25rem;
+    }
+
+    .dropdown-grid .dropdown-item.text-center {
+        margin: 0.75rem;
+        padding: 0.875rem;
+    }
+}
+
+/* Large screens optimization */
+@media (min-width: 1200px) {
+    .dropdown-scrollable {
+        min-width: 320px;
+    }
+
+    .dropdown-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 950px;
+    }
+}
+
+/* Dropdown toggle button enhancements */
+.dropdown-toggle::after {
+    margin-left: 0.5rem;
+    vertical-align: 0.1em;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-toggle:hover::after {
+    transform: translateY(1px);
+}
+
+/* Show dropdown on hover for desktop */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    .dropdown:hover .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+}
+
+/* Focus styles for accessibility */
+.dropdown-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 8px;
+}

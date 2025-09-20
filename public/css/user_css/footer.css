@@ -3,7 +3,7 @@
     backdrop-filter: blur(10px);
     padding: 4rem 0;
     border-top: 1px solid var(--gray-200);
-    font-family: "Poppins", sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 /* Left Card */
@@ -39,6 +39,7 @@
     color: var(--gray-600);
     margin-left: 0.75rem;
     margin-bottom: 0;
+    font-family: var(--bs-font-sans-serif);
 }
 
 .site-footer .footer-card-description {
@@ -89,6 +90,7 @@
     font-weight: 600;
     color: var(--gray-600);
     margin-bottom: 1rem;
+    font-family: var(--bs-font-sans-serif);
 }
 
 .site-footer .footer-links {

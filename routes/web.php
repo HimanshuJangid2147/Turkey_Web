@@ -22,3 +22,11 @@ Route::get('/privacy-policy', function () {
 Route::get('/destinations', function() {
     return view('user.pages.alldestinations');
 });
+
+Route::get('/packages', function() {
+    return view('user.pages.packagedetails');
+});
+
+Route::get('/outbound', function() {
+    return view('user.pages.outbound');
+});

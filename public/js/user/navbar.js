@@ -40,4 +40,23 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // Dropdown accessibility improvements
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  dropdownToggles.forEach(toggle => {
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target) && !toggle.nextElementSibling?.contains(e.target)) {
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Handle keyboard navigation
+    toggle.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.blur();
+      }
+    });
+  });
 });
