@@ -30,3 +30,7 @@ Route::get('/packages', function() {
 Route::get('/outbound', function() {
     return view('user.pages.outbound');
 });
+
+Route::get('/select-dates', function() {
+    return view('user.pages.selectdates');
+});
