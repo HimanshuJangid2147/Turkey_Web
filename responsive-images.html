@@ -1,0 +1,89 @@
+<!-- Responsive Images Implementation Guide -->
+
+<!-- Example 1: Basic Responsive Image -->
+<picture>
+    <source media="(max-width: 480px)" srcset="/images/optimized/webp/small/Istanbul-Sightseeing-small.webp">
+    <source media="(max-width: 768px)" srcset="/images/optimized/webp/medium/Istanbul-Sightseeing-medium.webp">
+    <source media="(min-width: 769px)" srcset="/images/optimized/webp/Istanbul-Sightseeing.webp">
+    <img src="/images/optimized/jpg/Istanbul-Sightseeing.jpg"
+         alt="Istanbul Sightseeing"
+         loading="lazy"
+         width="1188"
+         height="800">
+</picture>
+
+<!-- Example 2: Hero Image with Multiple Formats -->
+<picture>
+    <source type="image/webp" srcset="/images/optimized/webp/istanbul.webp">
+    <source type="image/jpeg" srcset="/images/optimized/jpg/istanbul.jpg">
+    <img src="/images/optimized/jpg/istanbul.jpg"
+         alt="Istanbul City"
+         loading="eager"
+         width="2880"
+         height="2160">
+</picture>
+
+<!-- Example 3: Destination Card Images -->
+<picture>
+    <source type="image/webp" srcset="/images/optimized/webp/Antalya.webp">
+    <source type="image/jpeg" srcset="/images/optimized/jpg/Antalya.jpg">
+    <img src="/images/optimized/jpg/Antalya.jpg"
+         alt="Antalya"
+         loading="lazy"
+         width="1200"
+         height="675">
+</picture>
+
+<!-- Example 4: Gallery Images with Lazy Loading -->
+<picture>
+    <source type="image/webp" srcset="/images/optimized/webp/Cappadocia.webp">
+    <source type="image/jpeg" srcset="/images/optimized/jpg/Cappadocia.jpg">
+    <img src="/images/optimized/jpg/Cappadocia.jpg"
+         alt="Cappadocia"
+         loading="lazy"
+         width="1024"
+         height="683">
+</picture>
+
+<!-- Example 5: Thumbnail Images -->
+<picture>
+    <source type="image/webp" srcset="/images/optimized/webp/small/7-Days_Highlights-small.webp">
+    <source type="image/jpeg" srcset="/images/optimized/jpg/7-Days_Highlights.jpg">
+    <img src="/images/optimized/jpg/7-Days_Highlights.jpg"
+         alt="7 Days Highlights"
+         loading="lazy"
+         width="275"
+         height="183">
+</picture>
+
+<!-- Example 6: Logo Optimization -->
+<picture>
+    <source type="image/webp" srcset="/icons/optimized/logo.webp">
+    <source type="image/png" srcset="/icons/optimized/logo.png">
+    <img src="/icons/optimized/logo.png"
+         alt="Company Logo"
+         loading="eager"
+         width="200"
+         height="100">
+</picture>
+
+<!-- Example 7: Background Images (CSS) -->
+<style>
+.hero-background {
+    background-image: url('/images/optimized/webp/istanbul.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .hero-background {
+        background-image: url('/images/optimized/webp/medium/istanbul-medium.webp');
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-background {
+        background-image: url('/images/optimized/webp/small/istanbul-small.webp');
+    }
+}
+</style>

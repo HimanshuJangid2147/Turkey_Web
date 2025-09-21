@@ -1,0 +1,130 @@
+/* Master CSS - Optimized Version with Critical CSS First */
+
+/* ===== CRITICAL CSS (Above the Fold) ===== */
+/* These styles are loaded immediately for faster rendering */
+@import url('sitecolor.css');  /* CSS Variables and Colors - CRITICAL */
+@import url('base.css');       /* Universal styles, resets, typography - CRITICAL */
+@import url('layout.css');     /* Layout-specific styles - CRITICAL */
+
+/* ===== NON-CRITICAL CSS (Below the Fold) ===== */
+/* These styles are loaded after critical path */
+@import url('components.css'); /* Reusable components - NON-CRITICAL */
+@import url('utilities.css');  /* Utility classes - NON-CRITICAL */
+@import url('animations.css'); /* Animations - NON-CRITICAL */
+
+/* ===== PAGE-SPECIFIC CSS (Conditional Loading) ===== */
+/* These should be loaded conditionally based on current page */
+
+/* About Us Page */
+@import url('aboutus-optimized.css');
+
+/* All Destinations Page */
+@import url('alldestinations-optimized.css');
+
+/* Contact Page */
+@import url('contact-optimized.css');
+
+/* Package Details Page */
+@import url('packagedetails-optimized.css');
+
+/* Privacy Policy Page */
+@import url('privacypolicy-optimized.css');
+
+/* Select Dates Page */
+@import url('selectdates-optimized.css');
+
+/* ===== ADDITIONAL OPTIMIZATIONS ===== */
+/* Consolidated smaller files for fewer HTTP requests */
+@import url('ui-elements.css'); /* Combined: custom, dropdown, nav, hero */
+@import url('content.css');     /* Combined: bg, fonts, footer, graident */
+@import url('interactive.css'); /* Combined: outbound, breadcrumbs */
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+/* Preload critical fonts */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'),
+         url('../fonts/open-sans-regular.woff2') format('woff2');
+}
+
+/* Critical path optimization */
+body {
+    /* Optimize repaints */
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contain layout shifts */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Optimize animations */
+* {
+    /* Use transform and opacity for better performance */
+    transform: translateZ(0);
+}
+
+/* Critical button styles (inline to avoid flash) */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    white-space: nowrap;
+}
+
+/* Critical card styles */
+.card {
+    background: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* ===== RESPONSIVE OPTIMIZATIONS ===== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0066cc;
+        --gray-600: #333333;
+        --gray-700: #000000;
+    }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --white: #1a1a1a;
+        --gray-050: #2a2a2a;
+        --gray-100: #333333;
+        --gray-600: #cccccc;
+        --gray-700: #ffffff;
+    }
+}

@@ -1,0 +1,73 @@
+/* Select Dates Page - Only unique styles (consolidated from selectdates.css) */
+
+/* ===== HERO SECTION (Unique to Select Dates) ===== */
+.select-dates-hero {
+    position: relative;
+    padding: 2rem 0 2rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.select-dates-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--rgba-black-80);
+    z-index: 0;
+}
+
+.select-dates-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.select-dates-hero h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 4px 20px var(--rgba-black-80);
+}
+
+.select-dates-hero p {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 4px 20px var(--rgba-black-80);
+}
+
+.select-dates-hero .btn {
+    position: relative;
+    z-index: 4;
+}
+
+/* ===== SELECT DATES FORM (Unique to Select Dates) ===== */
+.select-dates-form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.select-dates-form label {
+    font-weight: 600;
+    color: var(--rgba-black-80);
+}
+
+.select-dates-form .form-group {
+    margin-bottom: 16px;
+}
+
+/* ===== RESPONSIVE STYLES (Unique to Select Dates) ===== */
+@media (max-width: 767px) {
+    .select-dates-hero h1 {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,117 @@
+/* Ultra Optimized CSS - Single File with All Critical Styles */
+
+/* ===== CSS VARIABLES (CRITICAL) ===== */
+@import url('sitecolor.css');
+
+/* ===== CRITICAL BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--gray-700);
+    background-color: var(--white);
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== CRITICAL LAYOUT ===== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+
+/* ===== CRITICAL COMPONENTS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.card {
+    background: var(--white);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== CRITICAL ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* ===== CRITICAL RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .container { padding: 0 1rem; }
+    .grid { grid-template-columns: 1fr; }
+    .flex { flex-direction: column; }
+}
+
+/* ===== NON-CRITICAL STYLES (Can be lazy-loaded) ===== */
+@import url('non-critical.css');
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+img { max-width: 100%; height: auto; }
+* { transform: translateZ(0); }
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

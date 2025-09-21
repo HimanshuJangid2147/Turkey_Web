@@ -1,0 +1,204 @@
+/* Interactive Elements - Consolidated from outbound.css, breadcrum.css */
+
+/* ===== BREADCRUMB STYLES ===== */
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "→";
+    color: var(--gray-400);
+    font-weight: 500;
+    margin: 0 0.5rem;
+}
+
+.breadcrumb-item a {
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumb-item.active {
+    color: var(--gray-800);
+    font-weight: 600;
+}
+
+/* ===== OUTBOUND LINK STYLES ===== */
+.outbound-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.outbound-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--white);
+    border: 2px solid var(--gray-200);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--gray-700);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.outbound-link:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.outbound-link i {
+    font-size: 1.1rem;
+}
+
+/* ===== SOCIAL LINKS ===== */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--gray-100);
+    border-radius: 50%;
+    color: var(--gray-600);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* ===== INTERACTIVE CARDS ===== */
+.interactive-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.interactive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+/* ===== TOGGLE ELEMENTS ===== */
+.toggle-element {
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.toggle-element.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+.toggle-element.expanded {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+/* ===== PROGRESS BARS ===== */
+.progress-bar {
+    background: var(--gray-200);
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.progress-fill {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* ===== TOOLTIPS ===== */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--gray-900);
+    color: var(--white);
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+}
+
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--gray-900) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 768px) {
+    .outbound-links {
+        flex-direction: column;
+    }
+
+    .outbound-link {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .breadcrumb {
+        font-size: 0.9rem;
+    }
+}

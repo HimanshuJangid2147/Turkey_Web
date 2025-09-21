@@ -1,0 +1,481 @@
+/* Animations CSS - All animations and transitions */
+
+/* ===== HERO ANIMATIONS ===== */
+.hero-content {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== CAROUSEL ANIMATIONS ===== */
+.carousel-item {
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-indicators button {
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+    transform: scale(1.2);
+}
+
+/* ===== BUTTON ANIMATIONS ===== */
+.hero-btn {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-btn::before {
+    transition: left 0.6s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-10px) scale(1.08);
+}
+
+.contact-btn::before {
+    transition: left 0.5s;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+}
+
+.contact-btn:hover::before {
+    left: 100%;
+}
+
+/* Newsletter Button Animation */
+.newsletter-btn {
+    transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Book Now Button Animation */
+.btn-book-now {
+    transition: all 0.3s ease;
+}
+
+.btn-book-now:hover {
+    transform: translateY(-2px);
+}
+
+/* View Details Button Animation */
+.btn-view-details {
+    transition: all 0.3s ease;
+}
+
+.btn-view-details:hover {
+    transform: translateY(-2px);
+}
+
+/* Load More Button Animation */
+.btn-load-more {
+    transition: all 0.3s ease;
+}
+
+.btn-load-more:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== CARD ANIMATIONS ===== */
+.card {
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Destination Card Animations */
+.destination-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.destination-card::before {
+    transition: opacity 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-15px) scale(1.03);
+}
+
+.destination-card img {
+    transition: transform 0.5s ease;
+}
+
+.destination-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Deals Card Animations */
+.deals-card {
+    transition: all 0.4s ease;
+}
+
+.deals-card:hover {
+    transform: translateY(-10px);
+}
+
+.deals-card .card-img-top {
+    transition: transform 0.4s ease;
+}
+
+.deals-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+/* Testimonial Card Animations */
+.testimonial-card {
+    transition: all 0.4s ease;
+}
+
+.testimonial-card::before {
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+    transform: scaleX(1);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Review Card Animations */
+.review-card {
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Related Card Animations */
+.related-card {
+    transition: all 0.3s ease;
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== FORM ANIMATIONS ===== */
+.form-control {
+    transition: all 0.3s ease;
+}
+
+.select-dates-form .btn {
+    transition: all 0.3s ease;
+}
+
+.select-dates-form .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== BADGE ANIMATIONS ===== */
+.discount-badge {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+/* ===== SECTION ANIMATIONS ===== */
+.divider-dot {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Feature Icon Animations */
+.feature-icon {
+    transition: all 0.3s ease;
+}
+
+.feature-icon::before {
+    transition: left 0.5s;
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.feature-item:hover .feature-icon::before {
+    left: 100%;
+}
+
+/* ===== MODAL ANIMATIONS ===== */
+.modal {
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    animation: modalContentScaleIn 0.3s ease;
+}
+
+@keyframes modalContentScaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    transform: scale(1.1);
+}
+
+.nav-btn {
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ===== GALLERY ANIMATIONS ===== */
+.gallery-main {
+    transition: all 0.3s ease;
+}
+
+.gallery-main:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-image {
+    transition: all 0.3s ease;
+}
+
+.gallery-main:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    transition: all 0.3s ease;
+}
+
+.btn-view-gallery {
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+}
+
+.gallery-overlay:hover .btn-view-gallery {
+    transform: translateY(0);
+}
+
+.btn-view-gallery:hover {
+    transform: translateY(-3px);
+}
+
+.thumbnail-item {
+    transition: all 0.3s ease;
+}
+
+.thumbnail-item:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.thumbnail-item img {
+    transition: all 0.3s ease;
+}
+
+.thumbnail-item:hover img {
+    transform: scale(1.1);
+}
+
+.thumbnail-item::before {
+    transition: all 0.3s ease;
+}
+
+/* ===== TIMELINE ANIMATIONS ===== */
+.timeline-marker {
+    transition: all 0.3s ease;
+}
+
+/* ===== STAT ANIMATIONS ===== */
+.stat-item {
+    transition: all 0.3s ease;
+}
+
+/* ===== HIGHLIGHT ANIMATIONS ===== */
+.highlight-item {
+    transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+    transform: translateX(5px);
+}
+
+/* ===== SOCIAL ANIMATIONS ===== */
+.footer-socials a {
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== NAVBAR ANIMATIONS ===== */
+#mainNavbar {
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    transition: all 0.3s ease;
+}
+
+.brand-icon-wrapper {
+    transition: all 0.3s ease;
+}
+
+.brand-icon {
+    transition: transform 0.3s ease;
+}
+
+.custom-toggler {
+    transition: all 0.3s ease;
+}
+
+.toggler-line {
+    transition: all 0.3s ease;
+}
+
+.nav-link-enhanced {
+    transition: all 0.3s ease;
+}
+
+.nav-link-enhanced::after {
+    transition: width 0.3s ease;
+}
+
+.nav-link-enhanced i {
+    transition: transform 0.2s ease;
+}
+
+.nav-link-enhanced:hover i {
+    transform: scale(1.1);
+}
+
+/* ===== UTILITY ANIMATIONS ===== */
+.fade-in-up {
+    transition: all 0.8s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== LOADING ANIMATIONS ===== */
+.loading-shimmer {
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* ===== INSTAGRAM ANIMATIONS ===== */
+.instagram-post {
+    transition: all 0.3s ease;
+}
+
+.instagram-post:hover {
+    transform: scale(1.05);
+}
+
+.instagram-post::before {
+    transition: opacity 0.3s ease;
+}
+
+.instagram-overlay {
+    transition: opacity 0.3s ease;
+}
+
+/* ===== SEARCH ANIMATIONS ===== */
+.search-input {
+    transition: all 0.3s ease;
+}
+
+/* ===== PACKAGE ANIMATIONS ===== */
+.package-stats {
+    transition: all 0.3s ease;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== TRANSFORM ANIMATIONS ===== */
+.transform {
+    transform: translateZ(0);
+}
+
+/* ===== HOVER ANIMATIONS ===== */
+.instagram-post-hover {
+    transition: transform 0.2s ease-in-out;
+}
+
+.instagram-post-hover:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== RESPONSIVE ANIMATIONS ===== */
+@media (max-width: 768px) {
+    .hero-btn {
+        transition: all 0.3s ease;
+    }
+
+    .hero-btn:hover {
+        transform: translateY(-5px) scale(1.05);
+    }
+}

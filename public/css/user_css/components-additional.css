@@ -1,0 +1,348 @@
+/* Additional Components CSS - Extra reusable components */
+
+/* ===== ADDITIONAL BUTTON COMPONENTS ===== */
+
+/* Primary Custom Button */
+.btn-primary-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 12px var(--rgba-primary-04);
+}
+
+.btn-primary-custom:hover {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-light) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--rgba-primary-05);
+    color: var(--white);
+}
+
+.btn-primary-custom i {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-primary-custom:hover i {
+    transform: scale(1.1);
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: var(--white);
+}
+
+/* ===== ADDITIONAL CARD COMPONENTS ===== */
+
+/* Card Image Wrapper */
+.card-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem 1rem 0 0;
+    height: 200px;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* Card Footer */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: var(--rgba-white-95);
+    border-top: 1px solid var(--gray-200);
+    margin-top: auto;
+}
+
+/* ===== ADDITIONAL FORM COMPONENTS ===== */
+
+/* Contact Form */
+.contact-form {
+    background: var(--rgba-white-95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px var(--rgba-black-01);
+    border: 1px solid var(--rgba-white-30);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-label {
+    display: block;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.contact-form .form-control {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--gray-200);
+    border-radius: 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--white);
+    color: var(--gray-700);
+}
+
+.contact-form .form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--rgba-primary-02);
+}
+
+.contact-form .form-control::placeholder {
+    color: var(--gray-500);
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border: none;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--rgba-primary-03);
+}
+
+/* ===== ADDITIONAL TIMELINE COMPONENTS ===== */
+
+/* Timeline Content Typography */
+.timeline-content h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 1rem;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.timeline-content h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.timeline-content p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.timeline-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.timeline-content li {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Timeline Responsive */
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .timeline-marker {
+        margin-bottom: 20px;
+    }
+
+    .timeline-content::before {
+        display: none;
+    }
+}
+
+/* ===== ADDITIONAL MODAL COMPONENTS ===== */
+
+/* Modal Content Responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 98vw;
+        max-height: 98vh;
+    }
+
+    .close-modal {
+        top: -50px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        max-width: 99vw;
+        max-height: 99vh;
+    }
+
+    .modal-content img {
+        border-radius: 10px;
+    }
+}
+
+/* ===== ADDITIONAL GALLERY COMPONENTS ===== */
+
+/* Gallery Button Hover States */
+.gallery-overlay:hover .btn-view-gallery {
+    transform: translateY(0);
+}
+
+.btn-view-gallery:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px var(--rgba-primary-04);
+    background: var(--white);
+}
+
+/* Gallery Responsive */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 30px;
+    }
+
+    .gallery-main {
+        height: 300px;
+    }
+
+    .gallery-thumbnails {
+        grid-template-rows: repeat(2, 120px);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gallery-overlay {
+        opacity: 1;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+        padding: 20px;
+    }
+
+    .btn-view-gallery {
+        transform: translateY(0);
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-main {
+        height: 250px;
+    }
+
+    .gallery-thumbnails {
+        grid-template-rows: repeat(2, 100px);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .gallery-overlay {
+        padding: 15px;
+    }
+
+    .btn-view-gallery {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+}
+
+/* ===== ADDITIONAL UTILITY COMPONENTS ===== */
+
+/* Font Weight Utilities */
+button, .btn {
+    font-weight: 500 !important;
+}
+
+/* Newsletter Form Legacy Support */
+.site-footer .newsletter-form .form-control {
+    border-radius: 8px 0 0 8px !important;
+    border-color: var(--gray-200);
+    font-size: 0.9rem;
+}
+
+.site-footer .newsletter-form .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.site-footer .newsletter-form .btn-submit {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    border-radius: 0 8px 8px 0 !important;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+.site-footer .newsletter-form .btn-submit:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* Input Group Styling */
+.input-group .form-control {
+    border-left: none;
+    border-radius: 0 16px 16px 0;
+}
+
+.input-group .input-group-text {
+    border-right: none;
+    border-radius: 16px 0 0 16px;
+    background: var(--gray-100);
+    border-color: var(--gray-200);
+    color: var(--gray-600);
+}

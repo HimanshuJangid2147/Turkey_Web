@@ -1,0 +1,78 @@
+/* Master CSS - Consolidated CSS Architecture for Turkey Website */
+
+/* ===== CORE FOUNDATION ===== */
+@import url('sitecolor.css');  /* CSS Variables and Colors */
+@import url('base.css');       /* Universal styles, resets, typography */
+@import url('layout.css');     /* Layout-specific styles (header, footer, grid systems) */
+@import url('components.css'); /* Reusable components (cards, buttons, forms, modals) */
+@import url('utilities.css');  /* Utility classes and helpers */
+@import url('animations.css'); /* All animations and transitions */
+
+/* ===== PAGE-SPECIFIC STYLES ===== */
+/* These are loaded conditionally based on the current page */
+
+/* About Us Page */
+@import url('aboutus-optimized.css');
+
+/* All Destinations Page */
+@import url('alldestinations-optimized.css');
+
+/* Contact Page */
+@import url('contact-optimized.css');
+
+/* Package Details Page */
+@import url('packagedetails-optimized.css');
+
+/* Privacy Policy Page */
+@import url('privacypolicy-optimized.css');
+
+/* Select Dates Page */
+@import url('selectdates-optimized.css');
+
+/* ===== ADDITIONAL PAGE FILES ===== */
+/* These contain only unique styles not covered by consolidated files */
+
+/* Custom styles for specific elements */
+@import url('custom.css');
+
+/* Font definitions */
+@import url('fonts.css');
+
+/* Background styles */
+@import url('bg.css');
+
+/* Breadcrumb styles */
+@import url('breadcrum.css');
+
+/* Dropdown styles */
+@import url('dropdown.css');
+
+/* Footer styles */
+@import url('footer.css');
+
+/* Gradient styles */
+@import url('graident.css');
+
+/* Hero section styles */
+@import url('hero.css');
+
+/* Navigation styles */
+@import url('nav.css');
+
+/* Outbound styles */
+@import url('outbound.css');
+
+/* ===== CSS OVERRIDES ===== */
+/* Bootstrap overrides are included in sitecolor.css */
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+/* Critical CSS is loaded first, non-critical styles loaded last */
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* All responsive styles are included in the respective files */
+
+/* ===== ACCESSIBILITY ===== */
+/* Focus states and accessibility features included in base.css */
+
+/* ===== BROWSER COMPATIBILITY ===== */
+/* Modern CSS features with fallbacks included where necessary */
