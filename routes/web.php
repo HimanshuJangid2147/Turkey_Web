@@ -34,3 +34,7 @@ Route::get('/outbound', function() {
 Route::get('/select-dates', function() {
     return view('user.pages.selectdates');
 });
+
+Route::get('/vlogs', function() {
+    return view('user.pages.vlogs');
+});
