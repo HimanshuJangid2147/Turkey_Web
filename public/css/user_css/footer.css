@@ -84,7 +84,12 @@
     background-color: #138496;
 } */
 
-/* Right Side Links */
+/* Footer Layout */
+.site-footer .row {
+    margin-bottom: 2rem;
+}
+
+/* Left Side Links */
 .site-footer .footer-heading {
     font-size: 1rem;
     font-weight: 600;

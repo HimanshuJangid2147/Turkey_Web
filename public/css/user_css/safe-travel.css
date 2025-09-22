@@ -1,0 +1,630 @@
+/* Safe Travel Page Styles */
+
+/* Hero Section */
+.safe-travel-hero {
+    position: relative;
+    padding: 3rem 0 3rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.safe-travel-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    color: var(--rgba-white-95);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Safety Overview Section */
+.safety-overview {
+    padding: 60px 0;
+    background: var(--gray-050);
+}
+
+.section-title {
+    color: var(--gray-800);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    color: var(--gray-600);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.safety-stat-card {
+    background: var(--white);
+    padding: 30px 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.safety-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.safety-stat-card h3 {
+    color: var(--gray-800);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-description {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Safety Guidelines Section */
+.safety-guidelines {
+    padding: 60px 0;
+    background: var(--white);
+}
+
+.guidelines-wrapper {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-200);
+}
+
+.guideline-category {
+    margin-bottom: 50px;
+}
+
+.category-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.category-header h3 {
+    color: var(--gray-800);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.category-header h3 i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.category-header p {
+    color: var(--gray-600);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.guideline-items {
+    margin-bottom: 30px;
+}
+
+.guideline-item {
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.guideline-item:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-light);
+}
+
+.guideline-item.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.guideline-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.guideline-question:hover {
+    background: var(--gray-050);
+}
+
+.guideline-question h4 {
+    margin: 0;
+    color: var(--gray-800);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.guideline-toggle-icon {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.guideline-item.active .guideline-toggle-icon {
+    transform: rotate(45deg);
+    color: var(--primary-dark);
+}
+
+.guideline-answer {
+    padding: 0 25px;
+    background: var(--gray-050);
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.guideline-item.active .guideline-answer {
+    max-height: 300px;
+    padding-bottom: 25px;
+}
+
+.guideline-answer p {
+    color: var(--gray-600);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Emergency Section */
+.emergency-section {
+    background: var(--gray-050);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 50px 0;
+}
+
+.emergency-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.emergency-header h3 {
+    color: var(--gray-800);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.emergency-header h3 i {
+    color: var(--danger-color, #dc3545);
+    font-size: 1.5rem;
+}
+
+.emergency-header p {
+    color: var(--gray-600);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.emergency-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+}
+
+.emergency-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.emergency-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--danger-color, #dc3545);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.emergency-card h4 {
+    color: var(--gray-800);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.emergency-number {
+    color: var(--danger-color, #dc3545);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.emergency-description {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Resources Section */
+.resources-section {
+    margin-top: 50px;
+}
+
+.resources-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.resources-header h3 {
+    color: var(--gray-800);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.resources-header h3 i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.resources-header p {
+    color: var(--gray-600);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.resource-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.resource-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+.resource-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.resource-card h4 {
+    color: var(--gray-800);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.resource-card p {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.resource-link {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.resource-card:hover .resource-link {
+    color: var(--primary-dark);
+}
+
+/* Contact CTA Section */
+.contact-cta-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+}
+
+.contact-cta-card {
+    background: var(--rgba-white-10);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    border: 1px solid var(--rgba-white-20);
+}
+
+.contact-cta-card h3 {
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.contact-cta-card p {
+    color: var(--rgba-white-90);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--rgba-white-20);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--rgba-white-30);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary-custom:hover {
+    background: var(--rgba-white-30);
+    color: var(--white);
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .safe-travel-hero {
+        padding: 2rem 0;
+        min-height: 250px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .guidelines-wrapper {
+        padding: 25px 20px;
+        margin: 0 15px;
+    }
+
+    .category-header h3 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .guideline-question {
+        padding: 15px 20px;
+    }
+
+    .guideline-question h4 {
+        font-size: 1rem;
+    }
+
+    .emergency-grid,
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .emergency-card,
+    .resource-card {
+        padding: 20px;
+    }
+
+    .contact-cta-card {
+        padding: 30px 20px;
+    }
+
+    .contact-cta-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-secondary-custom {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .guidelines-wrapper {
+        padding: 20px 15px;
+        margin: 0 10px;
+    }
+
+    .category-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .guideline-question {
+        padding: 12px 15px;
+    }
+
+    .guideline-question h4 {
+        font-size: 0.95rem;
+    }
+
+    .emergency-card,
+    .resource-card {
+        padding: 15px;
+    }
+
+    .contact-cta-card {
+        padding: 25px 15px;
+    }
+
+    .contact-cta-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .contact-cta-card p {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for smooth transitions */
+.guideline-answer {
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+.guideline-question:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Safety level indicators */
+.safety-level-high {
+    color: var(--success-color, #28a745);
+}
+
+.safety-level-medium {
+    color: var(--warning-color, #ffc107);
+}
+
+.safety-level-low {
+    color: var(--danger-color, #dc3545);
+}

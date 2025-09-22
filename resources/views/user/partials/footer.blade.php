@@ -3,68 +3,47 @@
     <div class="container">
         <div class="row gy-4 gx-lg-5 align-items-start">
 
+            <!-- Left side: Contact details and social media links -->
             <div class="col-lg-3 col-md-12">
                 <div class="footer-card">
                     <div class="footer-brand">
-                            <img src="{{ asset('icons/Satguru-new-preloader.gif') }}" alt="Logo" class="footer-brand-icon" height="50" width="80">
+                        <img src="{{ asset('icons/Satguru-new-preloader.gif') }}" alt="Logo" class="footer-brand-icon"
+                            height="50" width="80">
                         <h4 class="footer-brand-text">Turkey Travel</h4>
                     </div>
                     <p class="footer-card-description">
                         Discover the magic of Turkey with our expertly curated travel experiences. Creating
                         unforgettable memories since 1989.
                     </p>
-                    <div class="footer-region-select m-3 ">
-                        {{-- Dropdown for region select --}}
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="bi bi-globe"></i> Select Your Region
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Europe</a></li>
-                                <li><a class="dropdown-item" href="#">Asia</a></li>
-                                <li><a class="dropdown-item" href="#">North America</a></li>
-                                <li><a class="dropdown-item" href="#">South America</a></li>
-                                <li><a class="dropdown-item" href="#">Africa</a></li>
-                                <li><a class="dropdown-item" href="#">Oceania</a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <div class="col-lg-9 col-md-12">
+            <!-- Space between sections -->
+            <div class="col-lg-1 col-md-12"></div>
+
+            <!-- Right side: 3 sections -->
+            <div class="col-lg-7 col-md-12">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-6">
+                    <div class="col-lg-4 col-md-6 col-6">
                         <h5 class="footer-heading">Booking</h5>
                         <ul class="footer-links">
-                            <li><a href="#">Safe Travels</a></li>
-                            <li><a href="#">Travel Alerts</a></li>
+                            <li><a href={{ route('safe-travel') }}>Safe Travels</a></li>
+                            <li><a href="{{ route('travel-alerts') }}">Travel Alerts</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-6">
+                    <div class="col-lg-4 col-md-6 col-6">
                         <h5 class="footer-heading">Company</h5>
                         <ul class="footer-links">
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/privacy-policy">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href={{ route('aboutus') }}>About Us</a></li>
+                            <li><a href={{ route('privacypolicy') }}>Privacy Policy</a></li>
+                            <li><a href={{ route('terms-and-conditions') }}>Terms & Conditions</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-6">
+                    <div class="col-lg-4 col-md-6 col-6">
                         <h5 class="footer-heading">Contact</h5>
                         <ul class="footer-links">
-                            <li><a href="/contact">Get in Touch</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Reviews</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-6">
-                        <h5 class="footer-heading">Purpose</h5>
-                        <ul class="footer-links">
-                            <li><a href="#">The Foundation</a></li>
-                            <li><a href="#">People</a></li>
-                            <li><a href="#">Planet</a></li>
-                            <li><a href="#">Wildlife</a></li>
+                            <li><a href={{ route('contact') }}>Get in Touch</a></li>
+                            <li><a href={{ route('faq') }}>FAQ</a></li>
                         </ul>
                     </div>
                 </div>

@@ -269,9 +269,13 @@
                                         <span class="price-unit">per person</span>
                                     </div>
                                     <div class="card-actions">
-                                        <a href="#" class="btn-primary-custom">
+                                        <a href={{ route('packages') }} class="btn-primary-custom">
                                             <span>View Details</span>
                                             <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                        <a href="#" class="btn-enquire">
+                                            <span>Enquire Now</span>
+                                            <i class="fas fa-envelope"></i>
                                         </a>
                                     </div>
                                 </div>

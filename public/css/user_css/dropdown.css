@@ -200,6 +200,28 @@
     transition: transform 0.2s ease;
 }
 
+/* Hide green arrows for navigation dropdowns - Override Bootstrap */
+.navbar .dropdown-toggle::after,
+.navbar .nav-link-enhanced.dropdown-toggle::after,
+#mainNavbar .dropdown-toggle::after,
+.navbar-nav .dropdown-toggle::after,
+.navbar .navbar-nav .dropdown-toggle::after,
+.nav-item.dropdown .dropdown-toggle::after,
+#toursDropdown::after,
+#destinationsDropdown::after,
+#moreDropdown::after {
+    display: none !important;
+    content: none !important;
+    border: none !important;
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    transform: none !important;
+}
+
 .dropdown-toggle:hover::after {
     transform: translateY(1px);
 }

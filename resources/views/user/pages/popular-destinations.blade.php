@@ -108,7 +108,7 @@
                                 <i class="fas fa-users"></i>
                                 <span>2,847 booked this month</span>
                             </div>
-                            <a href="#" class="btn-book">Book Now</a>
+                            <a href={{ route('contact') }} class="btn-book">Enquire Now</a>
                         </div>
                     </div>
                 </div>
@@ -147,7 +147,7 @@
                                 <i class="fas fa-users"></i>
                                 <span>1,923 booked this month</span>
                             </div>
-                            <a href="#" class="btn-book">Book Now</a>
+                            <a href={{ route('contact') }} class="btn-book">Enquire Now</a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                                 <i class="fas fa-users"></i>
                                 <span>756 booked this month</span>
                             </div>
-                            <a href="#" class="btn-book">Book Now</a>
+                            <a href={{ route('contact') }} class="btn-book">Enquire Now</a>
                         </div>
                     </div>
                 </div>
@@ -224,7 +224,7 @@
                                 <i class="fas fa-users"></i>
                                 <span>1,234 booked this month</span>
                             </div>
-                            <a href="#" class="btn-book">Book Now</a>
+                            <a href={{ route('contact') }} class="btn-book">Enquire Now</a>
                         </div>
                     </div>
                 </div>
@@ -262,7 +262,7 @@
                                 <i class="fas fa-users"></i>
                                 <span>892 booked this month</span>
                             </div>
-                            <a href="#" class="btn-book">Book Now</a>
+                            <a href={{ route('contact') }} class="btn-book">Enquire Now</a>
                         </div>
                     </div>
                 </div>
@@ -300,7 +300,7 @@
                                 <i class="fas fa-users"></i>
                                 <span>654 booked this month</span>
                             </div>
-                            <a href="#" class="btn-book">Book Now</a>
+                            <a href={{ route('contact') }} class="btn-book">Enquire Now</a>
                         </div>
                     </div>
                 </div>

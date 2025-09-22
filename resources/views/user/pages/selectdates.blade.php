@@ -24,7 +24,7 @@
             <div class="package-card">
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <h1 class="package-title">Turkey Cultural Heritage Tour</h1>
+                        <h1 class="package-title">Istanbul Discovery Tour</h1>
                         <div class="package-meta">
                             <span class="duration"><i class="fas fa-clock"></i> 8 Days</span>
                             <span class="location"><i class="fas fa-map-marker-alt"></i> Istanbul, Cappadocia, Antalya</span>
@@ -263,10 +263,12 @@
 
                         <!-- Continue Button -->
                         <div class="continue-section">
+                            <a href={{ route('contact') }}>
                             <button class="btn-continue" id="continueBtn">
-                                Continue to Booking
+                                Continue Enquiry
                                 <i class="fas fa-arrow-right"></i>
                             </button>
+                            </a>
                         </div>
                     </div>
                 </div>

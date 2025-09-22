@@ -178,10 +178,12 @@
                         </div>
 
                         <div class="booking-form">
+                            <a href={{ route('select-dates') }}>
                             <button class="btn-book-now" id="bookNowBtn">
                                 <span>Select Dates</span>
                                 <i class="fa fa-arrow-right"></i>
                             </button>
+                            </a>
                         </div>
 
                         <div class="booking-features">
@@ -208,6 +210,15 @@
                     <div class="overview-content">
                         <h2>About This Package</h2>
                         <p class="lead">{{ $package->description }}</p>
+
+                        {{-- Know More About This Location Button--}}
+                        <a href={{ route('destination-details') }}>
+                        <button class="btn-know-more">
+                            <span>Know More About This Location</span>
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                        </a>
+
 
                         <h3>Package Highlights</h3>
                         <div class="highlights-grid">

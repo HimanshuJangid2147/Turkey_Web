@@ -50,10 +50,12 @@
                                 The fabulous destinations Istanbul, Gallipoli, Troy, Pergamon, Kusadasi, Ephesus, Sirince, Pamukkale, Antalya, Konya, Cappadocia are all in with Guaranteed Departure theme. It departs 4 times every month from Istanbul, is full of shouldn't be missed attractions, local shopping opportunities, traditional cuisine tastings, and remarkable night shows.
                             </p>
                             <div class="d-flex flex-column flex-sm-row gap-3">
+                            <a href="{{ route('inbound-tour') }}">
                                 <button class="btn hero-btn text-white">
                                     <i class="bi bi-compass-fill me-2"></i>
-                                    See Tours
+                                    Discover Destinations
                                 </button>
+                            </a>
                             </div>
                         </div>
                     </div>
@@ -106,7 +108,7 @@
         </div>
 
         <div class="text-center mt-5">
-            <a href="/destinations" class="btn hero-btn text-white">
+            <a href={{ route('inbound-tour') }} class="btn hero-btn text-white">
                 <i class="bi bi-map-fill me-2"></i>
                 View All Destinations
             </a>
@@ -330,12 +332,12 @@
                 @endforeach
             </div>
 
-            <div class="text-center mt-5">
+            {{-- <div class="text-center mt-5">
                 <button class="btn hero-btn text-white">
                     <i class="bi bi-chat-dots-fill me-2"></i>
                     Read More Reviews
                 </button>
-            </div>
+            </div> --}}
         </div>
     </section>
 
@@ -364,10 +366,12 @@
             </div>
 
             <div class="text-center">
+                <a href="{{ route('vlogs') }}">
                 <button class="btn hero-btn text-white">
                     <i class="bi bi-instagram me-2"></i>
-                    Follow @TurkeyTravel
+                    View Our Vlogs
                 </button>
+                </a>
             </div>
         </div>
     </section>
