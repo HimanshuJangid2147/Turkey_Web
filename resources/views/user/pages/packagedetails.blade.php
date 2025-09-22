@@ -3,9 +3,12 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/user_css/packagedetails.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/user_css/tabs.css') }}">
 @endpush
 
 @push('scripts')
+    <!-- jQuery for compatibility -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/user/packagedetails.js') }}"></script>
 @endpush
 
@@ -13,7 +16,7 @@
     @php
         $breadcrumbs = [
             ['title' => 'All Destinations', 'url' => '/destinations'],
-            ['title' => 'Package Details', 'url' => '/packagedetails']
+            ['title' => 'Package Details', 'url' => '/packagedetails'],
         ];
 
         // Sample package data - In real implementation, this would come from database/controller
@@ -21,7 +24,8 @@
             'id' => 1,
             'name' => 'Istanbul Discovery Tour',
             'subtitle' => 'Historical Heart of Turkey',
-            'description' => 'Experience the magical blend of East and West in Istanbul, where ancient history meets modern culture. This comprehensive tour takes you through the city\'s most iconic landmarks and hidden gems.',
+            'description' =>
+                'Experience the magical blend of East and West in Istanbul, where ancient history meets modern culture. This comprehensive tour takes you through the city\'s most iconic landmarks and hidden gems.',
             'duration' => '4 Days / 3 Nights',
             'price' => 299,
             'currency' => '$',
@@ -31,18 +35,13 @@
             'minimum_age' => 18,
             'group_size' => '2-15 People',
             'main_image' => 'images/Istanbul-Sightseeing.jpg',
-            'gallery' => [
-                'images/istanbul.webp',
-                'images/Cappadocia.jpg',
-                'images/Bodrum.webp',
-                'images/Antalya.jpg'
-            ],
+            'gallery' => ['images/istanbul.webp', 'images/Cappadocia.jpg', 'images/Bodrum.webp', 'images/Antalya.jpg'],
             'highlights' => [
                 'Visit Hagia Sophia and Blue Mosque',
                 'Explore Grand Bazaar and Spice Market',
                 'Bosphorus Cruise Experience',
                 'Topkapi Palace Guided Tour',
-                'Traditional Turkish Cuisine Tasting'
+                'Traditional Turkish Cuisine Tasting',
             ],
             'itinerary' => [
                 (object) [
@@ -50,29 +49,31 @@
                     'title' => 'Arrival & Istanbul Overview',
                     'description' => 'Arrive in Istanbul, hotel check-in, welcome dinner, and city orientation walk.',
                     'meals' => 'Dinner',
-                    'accommodation' => '4-star Hotel in Sultanahmet'
+                    'accommodation' => '4-star Hotel in Sultanahmet',
                 ],
                 (object) [
                     'day' => 2,
                     'title' => 'Historical Peninsula Tour',
-                    'description' => 'Visit Hagia Sophia, Blue Mosque, Hippodrome, and Topkapi Palace with expert guide.',
+                    'description' =>
+                        'Visit Hagia Sophia, Blue Mosque, Hippodrome, and Topkapi Palace with expert guide.',
                     'meals' => 'Breakfast, Lunch',
-                    'accommodation' => '4-star Hotel in Sultanahmet'
+                    'accommodation' => '4-star Hotel in Sultanahmet',
                 ],
                 (object) [
                     'day' => 3,
                     'title' => 'Bosphorus & Markets',
-                    'description' => 'Scenic Bosphorus cruise, Grand Bazaar, Spice Market, and traditional Turkish bath experience.',
+                    'description' =>
+                        'Scenic Bosphorus cruise, Grand Bazaar, Spice Market, and traditional Turkish bath experience.',
                     'meals' => 'Breakfast, Lunch, Dinner',
-                    'accommodation' => '4-star Hotel in Sultanahmet'
+                    'accommodation' => '4-star Hotel in Sultanahmet',
                 ],
                 (object) [
                     'day' => 4,
                     'title' => 'Departure Day',
                     'description' => 'Free morning for last-minute shopping, airport transfer, departure.',
                     'meals' => 'Breakfast',
-                    'accommodation' => null
-                ]
+                    'accommodation' => '',
+                ],
             ],
             'included' => [
                 'Airport transfers',
@@ -81,38 +82,39 @@
                 'All entrance fees',
                 'All meals as mentioned',
                 'Bosphorus cruise ticket',
-                'Travel insurance'
+                'Travel insurance',
             ],
             'excluded' => [
                 'International flights',
                 'Visa fees',
                 'Personal expenses',
                 'Optional activities',
-                'Gratuities'
+                'Gratuities',
             ],
             'reviews' => [
                 (object) [
                     'name' => 'Sarah Johnson',
                     'rating' => 5,
                     'date' => '2 weeks ago',
-                    'comment' => 'Absolutely amazing experience! The guide was knowledgeable and the itinerary was perfect.',
-                    'avatar' => 'https://randomuser.me/api/portraits/women/1.jpg'
+                    'comment' =>
+                        'Absolutely amazing experience! The guide was knowledgeable and the itinerary was perfect.',
+                    'avatar' => 'https://randomuser.me/api/portraits/women/1.jpg',
                 ],
                 (object) [
                     'name' => 'Michael Chen',
                     'rating' => 5,
                     'date' => '1 month ago',
                     'comment' => 'Best trip ever! Istanbul is magical and this tour captured all the highlights.',
-                    'avatar' => 'https://randomuser.me/api/portraits/men/1.jpg'
+                    'avatar' => 'https://randomuser.me/api/portraits/men/1.jpg',
                 ],
                 (object) [
                     'name' => 'Emma Wilson',
                     'rating' => 4,
                     'date' => '2 months ago',
                     'comment' => 'Great value for money. The Bosphorus cruise was the highlight of our trip.',
-                    'avatar' => 'https://randomuser.me/api/portraits/women/2.jpg'
-                ]
-            ]
+                    'avatar' => 'https://randomuser.me/api/portraits/women/2.jpg',
+                ],
+            ],
         ];
     @endphp
 
@@ -148,7 +150,8 @@
                                 </div>
                                 <div class="stat-content">
                                     <span class="stat-label">Rating</span>
-                                    <span class="stat-value">{{ $package->rating }} ({{ number_format($package->review_count) }} reviews)</span>
+                                    <span class="stat-value">{{ $package->rating }}
+                                        ({{ number_format($package->review_count) }} reviews)</span>
                                 </div>
                             </div>
                             <div class="stat-item">
@@ -208,7 +211,7 @@
 
                         <h3>Package Highlights</h3>
                         <div class="highlights-grid">
-                            @foreach($package->highlights as $highlight)
+                            @foreach ($package->highlights as $highlight)
                                 <div class="highlight-item">
                                     <i class="fas fa-check"></i>
                                     <span>{{ $highlight }}</span>
@@ -244,97 +247,32 @@
         </div>
     </section>
 
-    <!-- Itinerary Section -->
-    <section class="itinerary-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Trip Itinerary</h2>
-                <p>Day by day breakdown of your adventure</p>
+    {{-- Navbar for Trip Itinerary , Gallery and Inc/Exc Details --}}
+    <section class="package-tabs-section">
+        <nav class="itinerary-gallery-nav">
+            <div class="nav nav-tabs" id="myTab" role="tablist">
+                <button class="nav-link active" id="itinerary-tab" data-bs-toggle="tab" data-bs-target="#itinerary" type="button" role="tab"
+                    aria-controls="itinerary" aria-selected="true">Itinerary</button>
+
+                <button class="nav-link" id="gallery-tab" data-bs-toggle="tab" data-bs-target="#gallery" type="button" role="tab"
+                    aria-controls="gallery" aria-selected="false">Gallery</button>
+
+                <button class="nav-link" id="inc-exc-tab" data-bs-toggle="tab" data-bs-target="#inc-exc" type="button" role="tab"
+                    aria-controls="inc-exc" aria-selected="false">Inc/Exc</button>
+            </div>
+        </nav>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="itinerary" role="tabpanel" aria-labelledby="itinerary-tab">
+                @include('user.dependicies.TripItinerary')
             </div>
 
-            <div class="itinerary-timeline">
-                @foreach($package->itinerary as $index => $day)
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <span class="day-number">Day {{ $day->day }}</span>
-                        </div>
-                        <div class="timeline-content">
-                            <h4>{{ $day->title }}</h4>
-                            <p>{{ $day->description }}</p>
-                            <div class="day-details">
-                                @if($day->meals)
-                                    <span class="detail-item">
-                                        <i class="fas fa-utensils"></i>
-                                        {{ $day->meals }}
-                                    </span>
-                                @endif
-                                @if($day->accommodation)
-                                    <span class="detail-item">
-                                        <i class="fas fa-bed"></i>
-                                        {{ $day->accommodation }}
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Photo Gallery</h2>
-                <p>Explore the beauty of this destination</p>
+            <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
+                @include('user.dependicies.PhotoGallery')
             </div>
 
-            <div class="gallery-grid">
-                <div class="gallery-main">
-                    <img src="{{ asset($package->main_image) }}" alt="Main gallery image" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <button class="btn-view-gallery" onclick="openGallery(0)">
-                            <i class="fas fa-expand"></i>
-                            View Gallery
-                        </button>
-                    </div>
-                </div>
-                <div class="gallery-thumbnails">
-                    @foreach($package->gallery as $index => $image)
-                        <div class="thumbnail-item" onclick="openGallery({{ $index + 1 }})">
-                            <img src="{{ asset($image) }}" alt="Gallery image {{ $index + 1 }}">
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Inclusions/Exclusions Section -->
-    <section class="inclusions-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="inclusions-card">
-                        <h3><i class="fas fa-check-circle"></i> What's Included</h3>
-                        <ul class="inclusions-list">
-                            @foreach($package->included as $item)
-                                <li><i class="fas fa-check"></i> {{ $item }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="exclusions-card">
-                        <h3><i class="fas fa-times-circle"></i> What's Excluded</h3>
-                        <ul class="exclusions-list">
-                            @foreach($package->excluded as $item)
-                                <li><i class="fas fa-times"></i> {{ $item }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
+            <div class="tab-pane fade" id="inc-exc" role="tabpanel" aria-labelledby="inc-exc-tab">
+                @include('user.dependicies.Inc-ExcDetails')
             </div>
         </div>
     </section>
@@ -348,7 +286,7 @@
                     <div class="overall-rating">
                         <span class="rating-score">{{ $package->rating }}</span>
                         <div class="rating-stars">
-                            @for($i = 1; $i <= 5; $i++)
+                            @for ($i = 1; $i <= 5; $i++)
                                 <i class="fas fa-star {{ $i <= $package->rating ? 'filled' : '' }}"></i>
                             @endfor
                         </div>
@@ -358,7 +296,7 @@
             </div>
 
             <div class="reviews-grid">
-                @foreach($package->reviews as $review)
+                @foreach ($package->reviews as $review)
                     <div class="review-card">
                         <div class="review-header">
                             <img src="{{ $review->avatar }}" alt="{{ $review->name }}" class="reviewer-avatar">
@@ -367,7 +305,7 @@
                                 <span class="review-date">{{ $review->date }}</span>
                             </div>
                             <div class="review-rating">
-                                @for($i = 1; $i <= 5; $i++)
+                                @for ($i = 1; $i <= 5; $i++)
                                     <i class="fas fa-star {{ $i <= $review->rating ? 'filled' : '' }}"></i>
                                 @endfor
                             </div>
@@ -430,14 +368,4 @@
             </div>
         </div>
     </section>
-
-    <!-- Gallery Modal -->
-    <div id="galleryModal" class="gallery-modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeGallery()">&times;</button>
-            <button class="nav-btn prev-btn" onclick="previousImage()">&#10094;</button>
-            <button class="nav-btn next-btn" onclick="nextImage()">&#10095;</button>
-            <img id="modalImage" src="" alt="Gallery image">
-        </div>
-    </div>
 @endsection

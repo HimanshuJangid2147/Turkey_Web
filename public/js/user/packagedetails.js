@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeBookingForm();
     initializeAnimations();
     initializeLoadMore();
+    // Note: Tabs are now handled by Bootstrap 5 natively
 });
 
 // Gallery functionality
 let currentImageIndex = 0;
+let isZoomed = false;
 const galleryImages = [
     'images/Istanbul-Sightseeing.jpg',
     'images/istanbul.webp',
@@ -29,6 +31,96 @@ function initializeGallery() {
     thumbnailItems.forEach((item, index) => {
         item.addEventListener('click', () => openGallery(index + 1)); // +1 because first image is main
     });
+
+    // Initialize thumbnail strip if it exists
+    initializeThumbnailStrip();
+
+    // Add zoom functionality
+    initializeZoomFunctionality();
+
+    // Add keyboard shortcuts
+    initializeKeyboardShortcuts();
+}
+
+function initializeThumbnailStrip() {
+    const modal = document.getElementById('galleryModal');
+    if (!modal) return;
+
+    // Create thumbnail strip if it doesn't exist
+    let thumbnailStrip = modal.querySelector('.thumbnail-strip');
+    if (!thumbnailStrip) {
+        thumbnailStrip = document.createElement('div');
+        thumbnailStrip.className = 'thumbnail-strip';
+        modal.appendChild(thumbnailStrip);
+
+        // Add thumbnails to strip
+        galleryImages.forEach((image, index) => {
+            const thumbnailItem = document.createElement('div');
+            thumbnailItem.className = 'thumbnail-strip-item';
+            thumbnailItem.onclick = () => openGallery(index);
+
+            const img = document.createElement('img');
+            img.src = `/images/${image}`;
+            img.alt = `Gallery image ${index + 1}`;
+            img.loading = 'lazy';
+
+            thumbnailItem.appendChild(img);
+            thumbnailStrip.appendChild(thumbnailItem);
+        });
+    }
+
+    // Update active thumbnail
+    updateActiveThumbnail();
+}
+
+function initializeZoomFunctionality() {
+    const modalImage = document.getElementById('modalImage');
+    if (!modalImage) return;
+
+    // Add double-click to zoom
+    modalImage.addEventListener('dblclick', toggleZoom);
+
+    // Add zoom on mouse wheel
+    modalImage.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        if (e.deltaY < 0) {
+            zoomIn();
+        } else {
+            zoomOut();
+        }
+    });
+}
+
+function initializeKeyboardShortcuts() {
+    document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('galleryModal');
+        if (!modal || !modal.classList.contains('active')) return;
+
+        switch(e.key) {
+            case 'Escape':
+                closeGallery();
+                break;
+            case 'ArrowLeft':
+                previousImage();
+                break;
+            case 'ArrowRight':
+                nextImage();
+                break;
+            case 'z':
+            case 'Z':
+                toggleZoom();
+                break;
+            case '+':
+            case '=':
+                e.preventDefault();
+                zoomIn();
+                break;
+            case '-':
+                e.preventDefault();
+                zoomOut();
+                break;
+        }
+    });
 }
 
 function openGallery(index) {
@@ -37,6 +129,10 @@ function openGallery(index) {
     const modalImage = document.getElementById('modalImage');
 
     if (modal && modalImage) {
+        // Reset zoom state
+        isZoomed = false;
+        modalImage.classList.remove('zoomed');
+
         // Ensure modal is properly reset
         modal.classList.remove('active');
         modal.style.pointerEvents = 'none';
@@ -55,8 +151,42 @@ function openGallery(index) {
             setTimeout(() => {
                 modalImage.style.opacity = '1';
             }, 50);
+
+            // Update image counter
+            updateImageCounter();
+
+            // Update active thumbnail
+            updateActiveThumbnail();
         }, 10);
     }
+}
+
+function updateImageCounter() {
+    const modal = document.getElementById('galleryModal');
+    if (!modal) return;
+
+    let counter = modal.querySelector('.image-counter');
+    if (!counter) {
+        counter = document.createElement('div');
+        counter.className = 'image-counter';
+        modal.appendChild(counter);
+    }
+
+    counter.textContent = `${currentImageIndex + 1} of ${galleryImages.length}`;
+}
+
+function updateActiveThumbnail() {
+    const modal = document.getElementById('galleryModal');
+    if (!modal) return;
+
+    const thumbnails = modal.querySelectorAll('.thumbnail-strip-item');
+    thumbnails.forEach((thumb, index) => {
+        if (index === currentImageIndex) {
+            thumb.classList.add('active');
+        } else {
+            thumb.classList.remove('active');
+        }
+    });
 }
 
 function closeGallery() {
@@ -100,12 +230,49 @@ function updateGalleryImage() {
     const modalImage = document.getElementById('modalImage');
 
     if (modalImage) {
+        // Reset zoom when changing images
+        isZoomed = false;
+        modalImage.classList.remove('zoomed');
+
         modalImage.style.opacity = '0';
         setTimeout(() => {
             modalImage.src = galleryImageUrls[currentImageIndex];
             modalImage.style.opacity = '1';
+
+            // Update UI elements
+            updateImageCounter();
+            updateActiveThumbnail();
         }, 150);
     }
+}
+
+function toggleZoom() {
+    const modalImage = document.getElementById('modalImage');
+    if (!modalImage) return;
+
+    isZoomed = !isZoomed;
+
+    if (isZoomed) {
+        modalImage.classList.add('zoomed');
+    } else {
+        modalImage.classList.remove('zoomed');
+    }
+}
+
+function zoomIn() {
+    const modalImage = document.getElementById('modalImage');
+    if (!modalImage || isZoomed) return;
+
+    isZoomed = true;
+    modalImage.classList.add('zoomed');
+}
+
+function zoomOut() {
+    const modalImage = document.getElementById('modalImage');
+    if (!modalImage || !isZoomed) return;
+
+    isZoomed = false;
+    modalImage.classList.remove('zoomed');
 }
 
 // Booking form functionality
@@ -472,3 +639,5 @@ function allowBodyScroll() {
     document.body.style.width = '';
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
 }
+
+// Note: Tabs are now handled by Bootstrap 5 natively - no additional JavaScript needed

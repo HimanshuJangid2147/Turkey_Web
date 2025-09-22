@@ -9,11 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.scrollY > 50) {
       if (!scrolled) {
         navbar.classList.add('scrolled');
+        document.body.classList.add('scrolled');
         scrolled = true;
       }
     } else {
       if (scrolled) {
         navbar.classList.remove('scrolled');
+        document.body.classList.remove('scrolled');
         scrolled = false;
       }
     }
