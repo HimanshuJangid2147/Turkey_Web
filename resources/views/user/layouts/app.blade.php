@@ -20,11 +20,19 @@
 
     {{-- Font Awesome Icons - Using Kit for better reliability --}}
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/js/all.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.0.1/css/fontawesome.min.css">
 
     {{-- Fallback CDN for Font Awesome if Kit fails to load --}}
-    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /></noscript>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </noscript>
 
     {{-- Bootstrap Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -37,12 +45,17 @@
     <link rel="stylesheet" href="{{ asset('css/user_css/nav.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user_css/footer.css') }}">
 
+    {{-- Alert CSS --}}
+    <link rel="stylesheet" href="{{ asset('css/user_css/alert.css') }}?v={{ time() }}">
+
     {{-- Page-specific CSS --}}
     @stack('styles')
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100">
     <header>
+        {{-- Fixed position TravelAlert at the very top --}}
+        @include('user.dependicies.TravelAleart')
         @include('user.partials.navbar')
     </header>
     <main class="flex-grow-1">
@@ -61,6 +74,7 @@
     </script>
 
     <script src="{{ asset('js/user/layout.js') }}"></script>
+    <script src="{{ asset('js/user/alert.js') }}"></script>
 
     @stack('scripts')
 </body>

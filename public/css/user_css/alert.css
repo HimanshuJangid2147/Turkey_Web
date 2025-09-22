@@ -1,0 +1,250 @@
+        .alert-bar {
+            background: linear-gradient(135deg, var(--rgba-secondary-01) 0%, var(--rgba-primary-02) 100%);
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .alert-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        .alert-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .alert-icon {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            animation: pulse 2s infinite;
+        }
+
+        .alert-icon i {
+            color: #fff;
+            font-size: 20px;
+            animation: bell-ring 2s infinite;
+        }
+
+        .alert-text {
+            flex: 1;
+            color: white;
+        }
+
+        .alert-text h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .alert-text p {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .alert-button .btn {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .alert-button .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .alert-button .btn::after {
+            content: '\f054';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+
+        .alert-button .btn:hover::after {
+            transform: translateX(3px);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        /* Demo content */
+        .demo-content {
+            flex: 1;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .demo-content h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .demo-content p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes bell-ring {
+            0%, 50%, 100% {
+                transform: rotate(0deg);
+            }
+            10%, 30% {
+                transform: rotate(-10deg);
+            }
+            20%, 40% {
+                transform: rotate(10deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .alert-bar-content {
+                padding: 12px 16px;
+                gap: 15px;
+            }
+
+            .alert-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .alert-icon i {
+                font-size: 16px;
+            }
+
+            .alert-text h3 {
+                font-size: 16px;
+            }
+
+            .alert-text p {
+                font-size: 13px;
+            }
+
+            .alert-button .btn {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .alert-bar-content {
+                flex-wrap: wrap;
+                text-align: center;
+            }
+
+            .alert-text {
+                order: -1;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .alert-button {
+                flex: 1;
+            }
+
+            .alert-button .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Alternative Color Schemes */
+        .alert-bar.warm {
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6b35 100%);
+        }
+
+        .alert-bar.teal {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+        }
+
+        .alert-bar.sunset {
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+        }
