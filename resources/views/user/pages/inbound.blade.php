@@ -11,7 +11,7 @@
 
 @section('content')
     @php
-        $breadcrumbs = [['title' => 'All Destinations', 'url' => '/destinations']];
+        $breadcrumbs = [['title' => 'Inbound Tours', 'url' => '/inbound-tour']];
     @endphp
 
     @php
@@ -133,7 +133,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 text-center">
-                    <h1 class="hero-title">All Destinations</h1>
+                    <h1 class="hero-title">Inbound Tours</h1>
                     <p class="hero-subtitle">
                         Discover {{ count($destinations) }} amazing destinations across Turkey, from historical wonders to
                         natural paradises

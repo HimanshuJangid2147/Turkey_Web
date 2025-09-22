@@ -19,16 +19,53 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto align-items-center">
+        <!-- Home Link -->
+        <li class="nav-item me-lg-3">
+          <a class="nav-link nav-link-enhanced fw-semibold d-flex align-items-center" href="/">
+            <i class="bi bi-house-door-fill me-1"></i>Home
+          </a>
+        </li>
+
+        <!-- Tours & Services Dropdown -->
+        <li class="nav-item dropdown me-lg-3">
+          <a class="nav-link nav-link-enhanced fw-semibold d-flex align-items-center dropdown-toggle" href="#" id="toursDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-briefcase-fill me-1"></i>Tours & Services
+            <i class="bi bi-caret-down-fill ms-1"></i>
+          </a>
+          <div class="dropdown-menu dropdown-scrollable" aria-labelledby="toursDropdown">
+            <div class="dropdown-grid">
+              <h6 class="dropdown-header">Choose Your Tour Type</h6>
+              <a class="dropdown-item" href="/inbound-tour">
+                <i class="bi bi-airplane me-2"></i>Inbound Tours
+              </a>
+              <a class="dropdown-item" href="/outbound-tours">
+                <i class="bi bi-airplane-engines me-2"></i>Outbound Tours
+              </a>
+              <a class="dropdown-item" href="/select-dates">
+                <i class="bi bi-calendar-check me-2"></i>Select Dates
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/packages">
+                <i class="bi bi-box-seam me-2"></i>Package Details
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Destinations Dropdown -->
         <li class="nav-item dropdown me-lg-3">
           <a class="nav-link nav-link-enhanced fw-semibold d-flex align-items-center dropdown-toggle" href="#" id="destinationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-compass-fill me-1"></i>All Destinations
+            <i class="bi bi-compass-fill me-1"></i>Destinations
             <i class="bi bi-caret-down-fill ms-1"></i>
           </a>
           <div class="dropdown-menu dropdown-scrollable" aria-labelledby="destinationsDropdown">
             <div class="dropdown-grid">
               <h6 class="dropdown-header">Choose Your Destination</h6>
-              <a class="dropdown-item" href="/tours">
-                <i class="bi bi-globe me-2"></i>All Tours
+              <a class="dropdown-item" href="/destinations/popular">
+                <i class="bi bi-star-fill me-2"></i>Popular Destinations
+              </a>
+              <a class="dropdown-item" href="/destinations/categories">
+                <i class="bi bi-grid-3x3-gap me-2"></i>Destination Categories
               </a>
               <div class="dropdown-divider"></div>
 
@@ -76,11 +113,29 @@
             </div>
           </div>
         </li>
+
+        <!-- About Us -->
         <li class="nav-item me-lg-3">
-          <a class="nav-link nav-link-enhanced fw-semibold d-flex align-items-center" href="/destinations">
-            <i class="bi bi-map-fill me-1"></i>Packages
+          <a class="nav-link nav-link-enhanced fw-semibold d-flex align-items-center" href="/about">
+            <i class="bi bi-info-circle-fill me-1"></i>About Us
           </a>
         </li>
+
+        <!-- Vlogs -->
+        <li class="nav-item me-lg-3">
+          <a class="nav-link nav-link-enhanced fw-semibold d-flex align-items-center" href="/vlogs">
+            <i class="bi bi-play-circle-fill me-1"></i>Vlogs
+          </a>
+        </li>
+
+        <!-- Privacy Policy -->
+        <li class="nav-item me-lg-3">
+          <a class="nav-link nav-link-enhanced fw-semibold d-flex align-items-center" href="/privacy-policy">
+            <i class="bi bi-shield-check me-1"></i>Privacy Policy
+          </a>
+        </li>
+
+        <!-- Contact Us Button -->
         <li class="nav-item">
           <a class="btn btn-info contact-btn text-white rounded-pill px-4 py-2" href="/contact">
             <i class="bi bi-envelope-fill me-1"></i>Contact Us
