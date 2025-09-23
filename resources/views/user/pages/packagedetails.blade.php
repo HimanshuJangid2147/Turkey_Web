@@ -163,6 +163,15 @@
                                     <span class="stat-value">{{ $package->group_size }}</span>
                                 </div>
                             </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-label">Minimum Age</span>
+                                    <span class="stat-value">{{ $package->minimum_age }}+</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -206,7 +215,7 @@
     <section class="package-overview">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="overview-content">
                         <h2>About This Package</h2>
                         <p class="lead">{{ $package->description }}</p>
@@ -231,7 +240,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                {{-- <div class="col-lg-4">
                     <div class="package-info-card">
                         <h4>Package Information</h4>
                         <div class="info-list">
@@ -253,7 +262,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

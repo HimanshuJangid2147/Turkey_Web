@@ -13,7 +13,7 @@
 /* Hero Section */
 .package-hero {
     position: relative;
-    min-height: 70vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     background-size: cover;
@@ -93,8 +93,9 @@
 
 .package-stats {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .stat-item {
@@ -106,6 +107,8 @@
     padding: 15px 20px;
     border-radius: 15px;
     border: 1px solid var(--rgba-white-20);
+    flex: 0 0 calc(50% - 10px);
+    min-width: 200px;
 }
 
 .stat-icon {

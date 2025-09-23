@@ -55,7 +55,7 @@
 <body class="bg-light d-flex flex-column min-vh-100">
     <header>
         {{-- Fixed position TravelAlert at the very top --}}
-        @include('user.dependicies.TravelAleart')
+        {{-- @include('user.dependicies.TravelAleart') --}}
         @include('user.partials.navbar')
     </header>
     <main class="flex-grow-1">
